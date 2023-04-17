@@ -5,34 +5,55 @@ using UnityEngine;
 public class PlayerBaseGun : MonoBehaviour
 {
     [SerializeField] List<GameObject> enemyList = new List<GameObject>();
-    private CircleCollider2D targetableArea;
-    private float distance;
     private DataManager dataManager;
+    private float distance;
+
+    [SerializeField] GameObject projectilePrefab;
     private void Start()
     {
         dataManager = DataManager.Instance;
-        targetableArea = GetComponent<CircleCollider2D>();
         dataManager.LoadPlayerData();
-        //Debug.Log("data" + dataManager.gameData.projectileData.damage);    
     }
 
     private void FireToClosestEnemy()
     {
-        Transform closestEnemyPos = FindClosestEnemy().transform;
+        Transform closestEnemyPos = FindClosestEnemy().transform; // find closest enemy position
+        Vector3 direction = closestEnemyPos.position - transform.position; // find projectile direction
+        float angle = Vector3.Angle(Vector3.right,direction); // Calculate projectile rotation
 
-
-
-
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            if(closestEnemyPos.transform.position.y >= 0)
+            {
+                InstantiateProjectile(closestEnemyPos,angle);
+            }
+            else if(closestEnemyPos.transform.position.y < 0)
+            {
+                InstantiateProjectile(closestEnemyPos,angle);
+            }
+        }
     }
-    GameObject aa;
-    private void Update() {
+
+    private void InstantiateProjectile(Transform closestEnemyPos, float angle)
+    {   
+        GameObject projectilePistol;
+
+        if(closestEnemyPos.transform.position.y >= 0)
+        {
+            projectilePistol = Instantiate(projectilePrefab,transform.position ,Quaternion.Euler(0,0,angle)); // Instantiating for y >= 0 position enemies
+        }
+        else if(closestEnemyPos.transform.position.y < 0)
+        {
+            projectilePistol = Instantiate(projectilePrefab,transform.position ,Quaternion.Euler(0,0,-angle));// Instantiating for y < 0 position enemies
+        }
+    }
+
+    private void Update() 
+    {
+        //dataManager.gameData.projectileData.damage +=1;
+        dataManager.SavePlayerData();
        
-       
-             //dataManager.gameData.projectileData.damage +=1;
-             dataManager.SavePlayerData();
-       
-        // aa = FindClosestEnemy();
-        // Debug.Log("ss" + aa.name);
+        FireToClosestEnemy();
     }
 
     private GameObject FindClosestEnemy()
