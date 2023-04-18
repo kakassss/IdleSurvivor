@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ProjectileMovement : MonoBehaviour
 {
-    private ProjectileDataHandler handler;
+    private PistolProjectileData data;
     private Rigidbody2D rigidbody2D;
     private void Start()
     {
-        handler = GetComponent<ProjectileDataHandler>();
+        data = DataManager.Instance.gameData.projectileData.pistolData;
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
@@ -16,7 +16,7 @@ public class ProjectileMovement : MonoBehaviour
     {
         if(rigidbody2D != null)
         {
-            rigidbody2D.velocity = transform.right * handler.projectileData.projectileSpeed;
+            rigidbody2D.velocity = transform.right * data.projectileSpeed;
         }           
     }
     

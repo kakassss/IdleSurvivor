@@ -10,7 +10,6 @@ public class NormalEnemyHealth : BaseEnemyHealth
         data = DataManager.Instance.gameData.enemyData.normalEnemy;
         currentHealth = data.health;
 
-        Debug.Log("normalEnemyHealth " + currentHealth);
     }
 
 

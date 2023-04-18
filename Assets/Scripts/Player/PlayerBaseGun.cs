@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class PlayerBaseGun : MonoBehaviour
 {
-    [SerializeField] List<GameObject> enemyList = new List<GameObject>();
+    [SerializeField] protected List<GameObject> enemyList = new List<GameObject>();
+    [SerializeField] protected GameObject projectilePrefab;
     private DataManager dataManager;
-    private float distance;
+    private PistolProjectileData data;
 
-    [SerializeField] GameObject projectilePrefab;
+    private GameObject projectilePistol; // usingForInsantiate
+    private float distance;
+    private float fireOfRate;
+    private float tempTime;
+
     private void Start()
     {
         dataManager = DataManager.Instance;
+        data = dataManager.gameData.projectileData.pistolData;
+        fireOfRate = data.fireofRate;
+        tempTime = fireOfRate;
+
+
         dataManager.LoadPlayerData();
+    }
+
+    private void Fire()
+    {
+        if(Time.time >= tempTime)
+        {
+            tempTime += fireOfRate;
+            FireToClosestEnemy();
+        }
     }
 
     private void FireToClosestEnemy()
@@ -21,23 +40,21 @@ public class PlayerBaseGun : MonoBehaviour
         Vector3 direction = closestEnemyPos.position - transform.position; // find projectile direction
         float angle = Vector3.Angle(Vector3.right,direction); // Calculate projectile rotation
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(closestEnemyPos == null) return;
+
+        if(closestEnemyPos.transform.position.y >= 0)
         {
-            if(closestEnemyPos.transform.position.y >= 0)
-            {
-                InstantiateProjectile(closestEnemyPos,angle);
-            }
-            else if(closestEnemyPos.transform.position.y < 0)
-            {
-                InstantiateProjectile(closestEnemyPos,angle);
-            }
+            InstantiateProjectile(closestEnemyPos,angle);
         }
+        else if(closestEnemyPos.transform.position.y < 0)
+        {
+            InstantiateProjectile(closestEnemyPos,angle);
+        }
+
     }
 
     private void InstantiateProjectile(Transform closestEnemyPos, float angle)
     {   
-        GameObject projectilePistol;
-
         if(closestEnemyPos.transform.position.y >= 0)
         {
             projectilePistol = Instantiate(projectilePrefab,transform.position ,Quaternion.Euler(0,0,angle)); // Instantiating for y >= 0 position enemies
@@ -52,8 +69,7 @@ public class PlayerBaseGun : MonoBehaviour
     {
         //dataManager.gameData.projectileData.damage +=1;
         dataManager.SavePlayerData();
-       
-        FireToClosestEnemy();
+        Fire();
     }
 
     private GameObject FindClosestEnemy()

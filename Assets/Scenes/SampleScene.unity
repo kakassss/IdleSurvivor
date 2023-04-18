@@ -217,6 +217,65 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1001 &332404088
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7018019130532107913, guid: 57b67368e9eadee488983b8f57049721, type: 3}
+      propertyPath: m_Name
+      value: StrongEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 57b67368e9eadee488983b8f57049721, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,11 +420,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8933251029159348697, guid: b078235470d3055429e6e38f7542bc74, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.21
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 8933251029159348697, guid: b078235470d3055429e6e38f7542bc74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.57
+      value: 4.97
       objectReference: {fileID: 0}
     - target: {fileID: 8933251029159348697, guid: b078235470d3055429e6e38f7542bc74, type: 3}
       propertyPath: m_LocalPosition.z
@@ -439,9 +498,9 @@ MonoBehaviour:
     projectileData:
       pistolData:
         itemName: 
-        damage: 0
-        projectileSpeed: 0
-        fireofRate: 0
+        damage: 12
+        projectileSpeed: 5
+        fireofRate: 0.4
         passThroghInEnemy: 0
       sniperData:
         itemName: 
@@ -453,12 +512,12 @@ MonoBehaviour:
       normalEnemy:
         enemyName: NormalEnemy
         health: 100
-        movementSpeed: 0.3
+        movementSpeed: 1
         damage: 1
       strongEnemyData:
         enemyName: StrongEnemy
-        health: 250
-        movementSpeed: 1
+        health: 122
+        movementSpeed: 0.2
         damage: 2
 --- !u!4 &2033066692
 Transform:
@@ -488,7 +547,7 @@ GameObject:
   - component: {fileID: 2071553399}
   - component: {fileID: 2071553400}
   - component: {fileID: 2071553401}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}

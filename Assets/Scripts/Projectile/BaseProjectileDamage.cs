@@ -9,18 +9,20 @@ public abstract class BaseProjectileDamage : MonoBehaviour
     protected float projectileSpeed;
     protected float fireofRate;
 
-    protected void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Enemy")
         {
             other.GetComponent<BaseEnemyHealth>().
                 GetDamage(gunDamage);
 
-            passThroghEnemyCounter--;
             if (passThroghEnemyCounter == 0)
             {
                 Destroy(gameObject);
-            }            
+            } 
+
+            passThroghEnemyCounter--;
+                       
         }
     }
 }
