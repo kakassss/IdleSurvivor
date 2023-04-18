@@ -53,8 +53,10 @@
      <Compile Include="Assets\Scripts\Enemy\BaseEnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\NormalEnemy\NormalEnemyMovement.cs" />
      <Compile Include="Assets\Scripts\GameData.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerBaseGun.cs" />
+     <Compile Include="Assets\Scripts\Gun\BaseGun.cs" />
      <Compile Include="Assets\Scripts\Enemy\StrongEnemy\StrongEnemyMovement.cs" />
+     <Compile Include="Assets\Scripts\Gun\PistolGun.cs" />
+     <Compile Include="Assets\Scripts\Gun\SniperGun.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\2022.1.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

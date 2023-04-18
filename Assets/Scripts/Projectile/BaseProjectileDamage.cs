@@ -7,7 +7,6 @@ public abstract class BaseProjectileDamage : MonoBehaviour
     protected float gunDamage;
     protected float passThroghEnemyCounter;
     protected float projectileSpeed;
-    protected float fireofRate;
 
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {

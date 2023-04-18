@@ -231,15 +231,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.1
+      value: 3.62
       objectReference: {fileID: 0}
     - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.58
+      value: -2.54
       objectReference: {fileID: 0}
     - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
       propertyPath: m_LocalPosition.z
@@ -406,65 +406,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1341527751
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 2
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8933251029159348697, guid: b078235470d3055429e6e38f7542bc74, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8933251029159348697, guid: b078235470d3055429e6e38f7542bc74, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8933251029159348697, guid: b078235470d3055429e6e38f7542bc74, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 8933251029159348697, guid: b078235470d3055429e6e38f7542bc74, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8933251029159348697, guid: b078235470d3055429e6e38f7542bc74, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8933251029159348697, guid: b078235470d3055429e6e38f7542bc74, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8933251029159348697, guid: b078235470d3055429e6e38f7542bc74, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8933251029159348697, guid: b078235470d3055429e6e38f7542bc74, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8933251029159348697, guid: b078235470d3055429e6e38f7542bc74, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8933251029159348697, guid: b078235470d3055429e6e38f7542bc74, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8933251029159348697, guid: b078235470d3055429e6e38f7542bc74, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8933251029159348699, guid: b078235470d3055429e6e38f7542bc74, type: 3}
-      propertyPath: m_Name
-      value: NormalEnemy
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: b078235470d3055429e6e38f7542bc74, type: 3}
 --- !u!1 &2033066690
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,28 +438,35 @@ MonoBehaviour:
   gameData:
     projectileData:
       pistolData:
-        itemName: 
+        projectileName: Glock
         damage: 12
         projectileSpeed: 5
-        fireofRate: 0.4
         passThroghInEnemy: 0
       sniperData:
-        itemName: 
-        damage: 0
-        projectileSpeed: 0
-        fireofRate: 0
-        passThroghInEnemy: 0
+        projectileName: Awp
+        damage: 33
+        projectileSpeed: 12
+        passThroghInEnemy: 3
     enemyData:
       normalEnemy:
         enemyName: NormalEnemy
         health: 100
         movementSpeed: 1
-        damage: 1
+        collectMoney: 0
       strongEnemyData:
         enemyName: StrongEnemy
         health: 122
         movementSpeed: 0.2
-        damage: 2
+        collectMoney: 0
+    gunsData:
+      pistolGunData:
+        gunName: Glock
+        fireofRate: 0.5
+        projectilePrefab: {fileID: 5321379050619259142, guid: 1f4b1fb1fbf11b74e9532c177f0da961, type: 3}
+      sniperGunData:
+        gunName: Awp
+        fireofRate: 1.5
+        projectilePrefab: {fileID: 2826325173624406934, guid: 6bcc80c409cd7e64cb9072f43b182720, type: 3}
 --- !u!4 &2033066692
 Transform:
   m_ObjectHideFlags: 0
@@ -545,8 +493,8 @@ GameObject:
   - component: {fileID: 2071553397}
   - component: {fileID: 2071553396}
   - component: {fileID: 2071553399}
-  - component: {fileID: 2071553400}
   - component: {fileID: 2071553401}
+  - component: {fileID: 2071553402}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -642,20 +590,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2071553400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2071553395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d8e5c0ce7189e74999a8634622331e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyList: []
-  projectilePrefab: {fileID: 1774078356636632753, guid: df5daeb1ec363e64cac40a35e026cf2c, type: 3}
 --- !u!58 &2071553401
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -672,3 +606,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 10
+--- !u!114 &2071553402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071553395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52756adf47b6ff948a2f95c0a501a0f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyList: []
