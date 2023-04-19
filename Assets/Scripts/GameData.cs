@@ -71,6 +71,7 @@ public class BaseProjectileData
     public float damage;
     public float projectileSpeed;
     public int passThroghInEnemy;
+    public float knockBackPower;
 }
 
 //----------------------------GUN DATAS----------------------------
@@ -86,5 +87,6 @@ public class BaseGunData
 {
     public string gunName;
     public float fireofRate;
+    public float radiusOfDetectArea;
     public GameObject projectilePrefab;
 }

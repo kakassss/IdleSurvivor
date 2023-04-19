@@ -13,6 +13,7 @@ public class PistolGun : BaseGun
 
         fireOfRate = data.fireofRate;
         projectilePrefab = data.projectilePrefab;
+        radiusOfDetectArea = data.radiusOfDetectArea;
         base.Start();
     }
 

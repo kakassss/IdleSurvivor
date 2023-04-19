@@ -47,6 +47,7 @@
      <Compile Include="Assets\Scripts\Projectile\ProjectileDataSO.cs" />
      <Compile Include="Assets\Scripts\Helper\FindPlayerPosition.cs" />
      <Compile Include="Assets\Scripts\Projectile\ProjectileMovement.cs" />
+     <Compile Include="Assets\Scripts\Gun\PistolGun.cs" />
      <Compile Include="Assets\Scripts\Enemy\StrongEnemy\StrongEnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Enemy\BaseEnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Projectile\PistolProjectile\PistolProjectileDamage.cs" />
@@ -55,7 +56,6 @@
      <Compile Include="Assets\Scripts\GameData.cs" />
      <Compile Include="Assets\Scripts\Gun\BaseGun.cs" />
      <Compile Include="Assets\Scripts\Enemy\StrongEnemy\StrongEnemyMovement.cs" />
-     <Compile Include="Assets\Scripts\Gun\PistolGun.cs" />
      <Compile Include="Assets\Scripts\Gun\SniperGun.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\2022.1.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

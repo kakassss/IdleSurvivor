@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class BaseEnemyHealth : MonoBehaviour
 {
     protected float currentHealth;
-    
+
     public void GetDamage(float damage)
     {
         currentHealth -= damage;
@@ -19,5 +19,7 @@ public abstract class BaseEnemyHealth : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+  
 
 }

@@ -13,5 +13,6 @@ public class SniperProjectileDamage : BaseProjectileDamage
         gunDamage = data.damage;
         passThroghEnemyCounter = data.passThroghInEnemy;
         projectileSpeed = data.projectileSpeed;
+        knockBackPower = data.knockBackPower;
     }
 }

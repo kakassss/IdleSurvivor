@@ -4,18 +4,23 @@ using UnityEngine;
 
 public abstract class BaseGun : MonoBehaviour
 {
-    [SerializeField] protected List<GameObject> enemyList = new List<GameObject>();
+    protected List<GameObject> enemyList = new List<GameObject>();
     protected GameObject projectilePrefab;
-    protected DataManager dataManager;
-    protected GameObject projectilePistol; // usingForInsantiate
-    protected float distance;
-
     protected float fireOfRate;
+    protected float radiusOfDetectArea;
+    protected DataManager dataManager;
+
+    protected CircleCollider2D detectArea;
+    protected float distance;
     protected float tempTime;
+    protected GameObject projectilePistol; // usingForInsantiate
+
 
     protected virtual void Start()
     {
-        dataManager.LoadPlayerData(); // updatedeki örnek gibi, pek bi işlevi yok hatta virtual olmasına bile şimdilik gerek yok
+        detectArea = GetComponent<CircleCollider2D>();
+        detectArea.radius = radiusOfDetectArea;
+        DataManager.Instance.LoadPlayerData(); // updatedeki örnek gibi, pek bi işlevi yok hatta virtual olmasına bile şimdilik gerek yok
                                     // ama dursun şimdilik
     }
 
@@ -62,7 +67,7 @@ public abstract class BaseGun : MonoBehaviour
     private void Update() 
     {
         //dataManager.gameData.projectileData.damage +=1;
-        dataManager.SavePlayerData(); // bunu ilerde bi şeyler için kullanabilirsin dursun şimdilik, zaten bu update calısmıyor
+        DataManager.Instance.SavePlayerData(); // bunu ilerde bi şeyler için kullanabilirsin dursun şimdilik, zaten bu update calısmıyor
         //Fire();
     }
 
