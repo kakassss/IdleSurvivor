@@ -9,6 +9,7 @@ public class NormalEnemyHealth : BaseEnemyHealth
     {
         data = DataManager.Instance.gameData.enemyData.normalEnemy;
         currentHealth = data.health;
+        knockBackPower = data.knockBack;
 
     }
 

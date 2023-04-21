@@ -501,24 +501,24 @@ MonoBehaviour:
         damage: 12
         projectileSpeed: 5
         passThroghInEnemy: 0
-        knockBackPower: 15
       sniperData:
         projectileName: Awp
         damage: 33
         projectileSpeed: 12
         passThroghInEnemy: 3
-        knockBackPower: 5
     enemyData:
       normalEnemy:
         enemyName: NormalEnemy
         health: 100
         movementSpeed: 1
         collectMoney: 0
+        knockBack: 15
       strongEnemyData:
         enemyName: StrongEnemy
         health: 122
         movementSpeed: 1
         collectMoney: 0
+        knockBack: 1
     gunsData:
       pistolGunData:
         gunName: Glock

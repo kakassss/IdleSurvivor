@@ -5,10 +5,13 @@ using UnityEngine;
 public class StrongEnemyHealth : BaseEnemyHealth
 {
     private StrongEnemyData data;
-    private void Start()
+   
+    protected override void Start()
     {
+        base.Start();
         data = DataManager.Instance.gameData.enemyData.strongEnemyData;
         currentHealth = data.health;
+        knockBackPower = data.knockBack;
 
         Debug.Log("StrongEnemyHealth " + currentHealth);
     }

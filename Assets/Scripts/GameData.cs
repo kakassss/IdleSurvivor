@@ -52,6 +52,7 @@ public class BaseEnemyData
     public float health;
     public float movementSpeed;
     public float collectMoney;
+    public float knockBack;
 }
 
 //----------------------------PROJECTILE DATAS----------------------------
@@ -71,7 +72,6 @@ public class BaseProjectileData
     public float damage;
     public float projectileSpeed;
     public int passThroghInEnemy;
-    public float knockBackPower;
 }
 
 //----------------------------GUN DATAS----------------------------
