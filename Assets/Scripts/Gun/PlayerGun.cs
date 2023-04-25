@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SniperGun : BaseGun
+public class PlayerGun : BaseGun
 {
-    private SniperGunData data;
 
+    private PlayerGunData data;
+    
     protected override void Start()
     {
-        data = DataManager.Instance.gameData.gunsData.sniperGunData;
-
+        data = DataManager.Instance.gameData.gunsData.playerGunData;
+        
         fireOfRate = data.fireofRate;
         projectilePrefab = data.projectilePrefab;
+        radiusOfDetectArea = data.radiusOfDetectArea;
         base.Start();
+
+        Debug.Log(data.gunName + "1111");
     }
 
     protected override void InstantiateProjectile()
@@ -29,9 +33,10 @@ public class SniperGun : BaseGun
 
     protected override void Update()
     {
-        Fire();
+        PlayerInput();
         //dataManager.gameData.projectileData.damage +=1;
         //DataManager.Instance.SavePlayerData(); // bunu ilerde bi şeyler için kullanabilirsin dursun şimdilik, zaten bu update calısmıyor
+        data.fireofRate += Time.deltaTime * 0.2f;
         //Fire();
     }
 }

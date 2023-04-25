@@ -12,7 +12,6 @@ public class StrongEnemyHealth : BaseEnemyHealth
         data = DataManager.Instance.gameData.enemyData.strongEnemyData;
         currentHealth = data.health;
         knockBackPower = data.knockBack;
-
-        Debug.Log("StrongEnemyHealth " + currentHealth);
+        exp = data.exp;
     }
 }

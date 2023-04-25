@@ -229,6 +229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PistolGun
       objectReference: {fileID: 0}
+    - target: {fileID: 8050229985740557600, guid: c097829970e460342834712b1a413aa5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8050229985740557606, guid: c097829970e460342834712b1a413aa5, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -294,11 +298,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.62
+      value: 2.29
       objectReference: {fileID: 0}
     - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.54
+      value: 3.76
       objectReference: {fileID: 0}
     - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
       propertyPath: m_LocalPosition.z
@@ -465,6 +469,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1440093069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1440093070}
+  - component: {fileID: 1440093072}
+  m_Layer: 0
+  m_Name: EnemySpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1440093070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440093069}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.4284412, y: -3.665208, z: -0.19430934}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1440093072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440093069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785ae0b09f392414f93296de20e2254a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2033066690
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2033066692}
   - component: {fileID: 2033066691}
+  - component: {fileID: 2033066693}
   m_Layer: 0
   m_Name: DataManager
   m_TagString: Untagged
@@ -497,39 +546,64 @@ MonoBehaviour:
   gameData:
     projectileData:
       pistolData:
-        projectileName: Glock
-        damage: 12
+        projectileName: 
+        damage: 11
         projectileSpeed: 5
         passThroghInEnemy: 0
       sniperData:
-        projectileName: Awp
-        damage: 33
-        projectileSpeed: 12
-        passThroghInEnemy: 3
+        projectileName: 
+        damage: 0
+        projectileSpeed: 0
+        passThroghInEnemy: 0
+      shotgunData:
+        projectileName: 
+        damage: 0
+        projectileSpeed: 0
+        passThroghInEnemy: 0
+      playerData:
+        projectileName: 
+        damage: 11
+        projectileSpeed: 4
+        passThroghInEnemy: 0
     enemyData:
       normalEnemy:
-        enemyName: NormalEnemy
-        health: 100
-        movementSpeed: 1
+        enemyName: 
+        health: 111
+        movementSpeed: 3
         collectMoney: 0
-        knockBack: 15
+        exp: 15
+        knockBack: 0
       strongEnemyData:
-        enemyName: StrongEnemy
-        health: 122
+        enemyName: 
+        health: 15
         movementSpeed: 1
         collectMoney: 0
+        exp: 15
         knockBack: 1
     gunsData:
       pistolGunData:
-        gunName: Glock
-        fireofRate: 0.5
+        gunName: 
+        fireofRate: 0.6
         radiusOfDetectArea: 10
         projectilePrefab: {fileID: 5321379050619259142, guid: 1f4b1fb1fbf11b74e9532c177f0da961, type: 3}
       sniperGunData:
-        gunName: Awp
-        fireofRate: 1.5
+        gunName: 
+        fireofRate: 0
+        radiusOfDetectArea: 0
+        projectilePrefab: {fileID: 0}
+      shotGunData:
+        gunName: 
+        fireofRate: 0
+        radiusOfDetectArea: 0
+        projectilePrefab: {fileID: 0}
+        projectileCount: 0
+      playerGunData:
+        gunName: sa1
+        fireofRate: 0.3
         radiusOfDetectArea: 15
-        projectilePrefab: {fileID: 2826325173624406934, guid: 6bcc80c409cd7e64cb9072f43b182720, type: 3}
+        projectilePrefab: {fileID: 4897721432353781075, guid: 382fa94100df95443a4262b0f5ecd30b, type: 3}
+    expData:
+      totalExp: 15
 --- !u!4 &2033066692
 Transform:
   m_ObjectHideFlags: 0
@@ -545,6 +619,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2033066693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033066690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad2fd04d78037845a683b4a142f5ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2071553395
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,3 +767,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52756adf47b6ff948a2f95c0a501a0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &2111547830
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7768914535927882618, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
+      propertyPath: m_Name
+      value: PlayerGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768914535927882620, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768914535927882620, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768914535927882620, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768914535927882620, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768914535927882620, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768914535927882620, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768914535927882620, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768914535927882620, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768914535927882620, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768914535927882620, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768914535927882620, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}

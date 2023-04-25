@@ -31,14 +31,13 @@ public abstract class BaseEnemyMovement : MonoBehaviour
     {
         Movement();
     }
-    
+
     protected virtual void Movement()
     {
         direction = playerPos.transform.position - transform.position; // gidilecek -+ yön
         distance = direction.magnitude; // aradaki uzaklık
         velocity = direction.normalized * movementSpeed; // gidilen hız 1 * x
 
-        Vector3 speedUp = new Vector3(0.1f,0.1f);
 
         if(distance <= 0.1f) return; // playerin yanında dursun diye
 

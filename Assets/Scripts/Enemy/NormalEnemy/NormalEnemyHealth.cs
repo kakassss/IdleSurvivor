@@ -5,11 +5,13 @@ using UnityEngine;
 public class NormalEnemyHealth : BaseEnemyHealth
 {
     private NormalEnemyData data;
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         data = DataManager.Instance.gameData.enemyData.normalEnemy;
         currentHealth = data.health;
         knockBackPower = data.knockBack;
+        exp = data.exp;
 
     }
 

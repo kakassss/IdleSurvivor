@@ -6,7 +6,8 @@ public abstract class BaseEnemyHealth : MonoBehaviour
 {
     protected float currentHealth;
     protected float knockBackPower;
-    public bool knockBackActive = false;
+    protected float exp;
+    [HideInInspector] public bool knockBackActive = false;
 
     private Rigidbody2D rb;
     private GameObject playerPos;
@@ -27,6 +28,7 @@ public abstract class BaseEnemyHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            BackGroundExpManager.Instance.AddExp(exp);
             Destroy(gameObject);
         }
     }
@@ -44,29 +46,11 @@ public abstract class BaseEnemyHealth : MonoBehaviour
         knockBackActive = true;
         Vector2 direction = (transform.position - playerPos.transform.position).normalized; // playerin pozisyonuna göre düşürmek daha sağlıklı
         rb.velocity = direction * knockBackPower;
-        //rb.AddForce(direction * knockBackPower,ForceMode2D.Impulse);
         
         yield return new WaitForSeconds(0.25f);
         rb.velocity = new Vector2(Mathf.SmoothStep(rb.velocity.x,0,1),
                                 Mathf.SmoothStep(rb.velocity.y,0,1));
-        //rb.velocity = Vector2.zero;
         knockBackActive = false;
-        // if(rb.velocity != rb.velocity/2)
-        // {
-        //     Debug.Log("onur11");
-        //     //rb.velocity -= Time.deltaTime * rb.velocity/15;
-        // }
-        //rb.velocity = Vector2.zero;
-    }
-    private void ResetKnockBack(Rigidbody2D rb)
-    {
-        StartCoroutine(ResetKnockBackCor(rb));
-    }
-    private IEnumerator ResetKnockBackCor(Rigidbody2D rb)
-    {
-        yield return new WaitForSeconds(1f);
-        knockBackActive = false;
-        rb.velocity = Vector3.zero;
-    }
 
+    }
 }

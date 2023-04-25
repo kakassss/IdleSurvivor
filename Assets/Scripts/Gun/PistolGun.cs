@@ -17,9 +17,23 @@ public class PistolGun : BaseGun
         base.Start();
     }
 
-
-    private void Update()
+    protected override void InstantiateProjectile()
     {
-        Fire(); 
+        if(closestEnemyPos.transform.position.y >= 0)
+        {
+            projectilePistol = Instantiate(projectilePrefab,transform.position ,Quaternion.Euler(0,0,angle)); // Instantiating for y >= 0 position enemies
+        }
+        else if(closestEnemyPos.transform.position.y < 0)
+        {
+            projectilePistol = Instantiate(projectilePrefab,transform.position ,Quaternion.Euler(0,0,-angle));// Instantiating for y < 0 position enemies
+        }
+    }
+
+    protected override void Update()
+    {
+        Fire();
+        //dataManager.gameData.projectileData.damage +=1;
+        //DataManager.Instance.SavePlayerData(); // bunu ilerde bi şeyler için kullanabilirsin dursun şimdilik, zaten bu update calısmıyor
+        //Fire();
     }
 }

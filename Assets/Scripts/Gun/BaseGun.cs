@@ -5,70 +5,68 @@ using UnityEngine;
 public abstract class BaseGun : MonoBehaviour
 {
     protected List<GameObject> enemyList = new List<GameObject>();
+    protected DataManager dataManager;
+    
     protected GameObject projectilePrefab;
     protected float fireOfRate;
-    protected float radiusOfDetectArea;
-    protected DataManager dataManager;
+    protected float distance; // find cloestEnemyPos
 
+    protected float radiusOfDetectArea;
     protected CircleCollider2D detectArea;
-    protected float distance;
-    protected float tempTime;
+    protected float tempTime; // using with fireOfRate
     protected GameObject projectilePistol; // usingForInsantiate
 
+    //Closest Enemy Pos with find projectile rotation
+    protected Transform closestEnemyPos;
+    protected Vector3 direction;
+    protected float angle;
 
     protected virtual void Start()
     {
         detectArea = GetComponent<CircleCollider2D>();
         detectArea.radius = radiusOfDetectArea;
-        DataManager.Instance.LoadPlayerData(); // updatedeki örnek gibi, pek bi işlevi yok hatta virtual olmasına bile şimdilik gerek yok
+        //DataManager.Instance.LoadPlayerData(); // updatedeki örnek gibi, pek bi işlevi yok hatta virtual olmasına bile şimdilik gerek yok
                                     // ama dursun şimdilik
     }
 
     protected virtual void Fire()
     {
-        if(Time.time >= tempTime)
+        tempTime += Time.deltaTime;
+        if(tempTime >= fireOfRate)
         {
-            tempTime += fireOfRate;
+            
             FireToClosestEnemy();
+            tempTime = 0f;
         }
     }
-
-    protected virtual void FireToClosestEnemy()
+    protected void CalculateClosestEnemyPos()
     {
-        Transform closestEnemyPos = FindClosestEnemy().transform; // find closest enemy position
-        Vector3 direction = closestEnemyPos.position - transform.position; // find projectile direction
-        float angle = Vector3.Angle(Vector3.right,direction); // Calculate projectile rotation
+        closestEnemyPos = FindClosestEnemy().transform; // find closest enemy position
+        direction = closestEnemyPos.position - transform.position; // find projectile direction
+        angle = Vector3.Angle(Vector3.right,direction); // Calculate projectile rotation
+    }
+    protected void FireToClosestEnemy()
+    {
+        CalculateClosestEnemyPos();
 
         if(closestEnemyPos == null) return;
 
         if(closestEnemyPos.transform.position.y >= 0)
         {
-            InstantiateProjectile(closestEnemyPos,angle);
+            InstantiateProjectile();
         }
         else if(closestEnemyPos.transform.position.y < 0)
         {
-            InstantiateProjectile(closestEnemyPos,angle);
+            InstantiateProjectile();
         }
 
     }
-
-    protected virtual void InstantiateProjectile(Transform closestEnemyPos, float angle)
-    {   
-        if(closestEnemyPos.transform.position.y >= 0)
-        {
-            projectilePistol = Instantiate(projectilePrefab,transform.position ,Quaternion.Euler(0,0,angle)); // Instantiating for y >= 0 position enemies
-        }
-        else if(closestEnemyPos.transform.position.y < 0)
-        {
-            projectilePistol = Instantiate(projectilePrefab,transform.position ,Quaternion.Euler(0,0,-angle));// Instantiating for y < 0 position enemies
-        }
-    }
-
-    private void Update() 
+    protected void PlayerInput()
     {
-        //dataManager.gameData.projectileData.damage +=1;
-        DataManager.Instance.SavePlayerData(); // bunu ilerde bi şeyler için kullanabilirsin dursun şimdilik, zaten bu update calısmıyor
-        //Fire();
+        if(Input.GetKey(KeyCode.Mouse0))
+        {
+            Fire();
+        }
     }
 
     protected virtual GameObject FindClosestEnemy()
@@ -116,4 +114,7 @@ public abstract class BaseGun : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position,2);    
     }
+
+    protected abstract void InstantiateProjectile(); // abstract yapmamım sebebi shotgun gibi etrafa sacılan projecileların olması
+    protected abstract void Update();
 }

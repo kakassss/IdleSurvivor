@@ -10,8 +10,5 @@ public class StrongEnemyMovement : BaseEnemyMovement
         data = DataManager.Instance.gameData.enemyData.strongEnemyData; 
         movementSpeed = data.movementSpeed;
         base.Start();
-        
-        
-        Debug.Log("StrongEnemyspeed" + movementSpeed);
     }
 }

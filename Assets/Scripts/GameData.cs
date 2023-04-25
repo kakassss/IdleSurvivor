@@ -11,6 +11,8 @@ public class GameData
     public EnemiesData enemyData;
     public GunsData gunsData;
 
+    public ExpData expData;
+
 }
 // ---------------------------------------------------------------
 
@@ -20,6 +22,9 @@ public class ProjectilesData
 {
     public PistolProjectileData pistolData;
     public SniperProjectileData sniperData;
+    public ShotgunProjectileData shotgunData;
+
+    public PlayerProjectileData playerData;
     
 }
 
@@ -37,6 +42,9 @@ public class GunsData
 {
     public PistolGunData pistolGunData;
     public SniperGunData sniperGunData;
+    public ShotGunData shotGunData;
+
+    public PlayerGunData playerGunData;
 }
 //----------------------------ENEMY DATAS----------------------------
 [Serializable]
@@ -52,6 +60,7 @@ public class BaseEnemyData
     public float health;
     public float movementSpeed;
     public float collectMoney;
+    public float exp;
     public float knockBack;
 }
 
@@ -62,6 +71,10 @@ public class PistolProjectileData : BaseProjectileData{}
 [Serializable]
 public class SniperProjectileData : BaseProjectileData{}
 
+[Serializable]
+public class ShotgunProjectileData : BaseProjectileData{}
+[Serializable]
+public class PlayerProjectileData : BaseProjectileData{}
 
 [Serializable]
 public class BaseProjectileData
@@ -83,10 +96,25 @@ public class PistolGunData : BaseGunData{}
 public class SniperGunData : BaseGunData{}
 
 [Serializable]
+public class PlayerGunData : BaseGunData{}
+
+[Serializable]
+public class ShotGunData : BaseGunData
+{
+    public int projectileCount;
+}
+[Serializable]
 public class BaseGunData
 {
     public string gunName;
     public float fireofRate;
     public float radiusOfDetectArea;
     public GameObject projectilePrefab;
+}
+//----------------------------Exp DATA----------------------------
+
+[Serializable]
+public class ExpData
+{
+    public float totalExp;
 }

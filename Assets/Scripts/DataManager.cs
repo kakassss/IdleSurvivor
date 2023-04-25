@@ -14,7 +14,7 @@ public class DataManager : MonoBehaviour
     }
     private void OnValidate()
     {
-        //LoadPlayerData();
+        LoadPlayerData();
         SavePlayerData();
     }
     public void LoadPlayerData()

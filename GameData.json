@@ -1,0 +1,84 @@
+{
+    "projectileData": {
+        "pistolData": {
+            "projectileName": "",
+            "damage": 11.0,
+            "projectileSpeed": 5.0,
+            "passThroghInEnemy": 0
+        },
+        "sniperData": {
+            "projectileName": "",
+            "damage": 0.0,
+            "projectileSpeed": 0.0,
+            "passThroghInEnemy": 0
+        },
+        "shotgunData": {
+            "projectileName": "",
+            "damage": 0.0,
+            "projectileSpeed": 0.0,
+            "passThroghInEnemy": 0
+        },
+        "playerData": {
+            "projectileName": "",
+            "damage": 11.0,
+            "projectileSpeed": 4.0,
+            "passThroghInEnemy": 0
+        }
+    },
+    "enemyData": {
+        "normalEnemy": {
+            "enemyName": "",
+            "health": 111.0,
+            "movementSpeed": 3.0,
+            "collectMoney": 0.0,
+            "exp": 15.0,
+            "knockBack": 0.0
+        },
+        "strongEnemyData": {
+            "enemyName": "",
+            "health": 15.0,
+            "movementSpeed": 1.0,
+            "collectMoney": 0.0,
+            "exp": 15.0,
+            "knockBack": 1.0
+        }
+    },
+    "gunsData": {
+        "pistolGunData": {
+            "gunName": "",
+            "fireofRate": 0.6000000238418579,
+            "radiusOfDetectArea": 10.0,
+            "projectilePrefab": {
+                "instanceID": 22726
+            }
+        },
+        "sniperGunData": {
+            "gunName": "",
+            "fireofRate": 0.0,
+            "radiusOfDetectArea": 0.0,
+            "projectilePrefab": {
+                "instanceID": 0
+            }
+        },
+        "shotGunData": {
+            "gunName": "",
+            "fireofRate": 0.0,
+            "radiusOfDetectArea": 0.0,
+            "projectilePrefab": {
+                "instanceID": 0
+            },
+            "projectileCount": 0
+        },
+        "playerGunData": {
+            "gunName": "sa1",
+            "fireofRate": 0.30000001192092898,
+            "radiusOfDetectArea": 15.0,
+            "projectilePrefab": {
+                "instanceID": 22728
+            }
+        }
+    },
+    "expData": {
+        "totalExp": 0.0
+    }
+}
