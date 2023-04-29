@@ -12,11 +12,15 @@ public class DataManager : MonoBehaviour
     {
         Instance = this;    
     }
-    private void OnValidate()
+    private void Start()
     {
         LoadPlayerData();
+    }
+    private void Update() 
+    {
         SavePlayerData();
     }
+
     public void LoadPlayerData()
     {
         // Dosyayı oku
@@ -31,7 +35,6 @@ public class DataManager : MonoBehaviour
         {
             // Dosya yoksa varsayılan verileri ayarla
             gameData = new GameData();
-     
         }
     }
 
@@ -48,5 +51,8 @@ public class DataManager : MonoBehaviour
         gameData = new GameData();
         SavePlayerData();
     }
-    
+    private void OnApplicationQuit() 
+    {
+        LoadPlayerData();
+    }
 }

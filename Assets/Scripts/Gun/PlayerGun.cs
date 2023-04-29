@@ -15,8 +15,6 @@ public class PlayerGun : BaseGun
         projectilePrefab = data.projectilePrefab;
         radiusOfDetectArea = data.radiusOfDetectArea;
         base.Start();
-
-        Debug.Log(data.gunName + "1111");
     }
 
     protected override void InstantiateProjectile()
@@ -34,9 +32,7 @@ public class PlayerGun : BaseGun
     protected override void Update()
     {
         PlayerInput();
-        //dataManager.gameData.projectileData.damage +=1;
         //DataManager.Instance.SavePlayerData(); // bunu ilerde bi şeyler için kullanabilirsin dursun şimdilik, zaten bu update calısmıyor
-        data.fireofRate += Time.deltaTime * 0.2f;
         //Fire();
     }
 }

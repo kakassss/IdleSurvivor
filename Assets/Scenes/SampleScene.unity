@@ -479,6 +479,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1440093070}
   - component: {fileID: 1440093072}
+  - component: {fileID: 1440093073}
   m_Layer: 0
   m_Name: EnemySpawnManager
   m_TagString: Untagged
@@ -513,6 +514,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785ae0b09f392414f93296de20e2254a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1440093073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440093069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad2fd04d78037845a683b4a142f5ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2033066690
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +536,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2033066692}
   - component: {fileID: 2033066691}
-  - component: {fileID: 2033066693}
   m_Layer: 0
   m_Name: DataManager
   m_TagString: Untagged
@@ -603,7 +615,7 @@ MonoBehaviour:
         radiusOfDetectArea: 15
         projectilePrefab: {fileID: 4897721432353781075, guid: 382fa94100df95443a4262b0f5ecd30b, type: 3}
     expData:
-      totalExp: 15
+      totalExp: 60
 --- !u!4 &2033066692
 Transform:
   m_ObjectHideFlags: 0
@@ -619,18 +631,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2033066693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2033066690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aad2fd04d78037845a683b4a142f5ca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2071553395
 GameObject:
   m_ObjectHideFlags: 0
