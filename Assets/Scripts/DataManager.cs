@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
 
 public class DataManager : MonoBehaviour
 {
@@ -10,38 +11,48 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;    
-    }
-    private void Start()
-    {
-        LoadPlayerData();
-    }
-    private void Update() 
-    {
-        SavePlayerData();
+        Instance = this;
+        gameData = LoadPlayerData(); 
+        //LoadPlayerData();    
     }
 
-    public void LoadPlayerData()
+    private void Update() 
+    {
+        SavePlayerData(gameData);
+    }
+    private void OnValidate()
+    {
+        //SavePlayerData(gameData);
+        gameData = LoadPlayerData();   
+        
+        //SavePlayerData(gameData);   
+    }
+    
+    public GameData LoadPlayerData()
     {
         // Dosyayı oku
         //burası şimdilik bilgisayar için eğer mobil ise persistentDataPath yapcan
+        
         string filePath = Application.dataPath + "/GameData.json";
+        GameData newGameData = new GameData();
+
         if (File.Exists(filePath))
         {
             string json = File.ReadAllText(filePath);
-            gameData = JsonUtility.FromJson<GameData>(json);
+            newGameData = JsonUtility.FromJson<GameData>(json);
         }
         else
         {
-            // Dosya yoksa varsayılan verileri ayarla
-            gameData = new GameData();
+            Debug.Log("save file does not exits");
         }
+        
+        return newGameData;
     }
 
-    public void SavePlayerData()
+    public void SavePlayerData(GameData data)
     {
         // Dosyayı yaz
-        string json = JsonUtility.ToJson(gameData);
+        string json = JsonUtility.ToJson(data,true);
         string filePath = Application.dataPath + "/GameData.json";
         File.WriteAllText(filePath, json);
     }
@@ -49,10 +60,10 @@ public class DataManager : MonoBehaviour
     public void ResetPlayerData()
     {
         gameData = new GameData();
-        SavePlayerData();
+        //SavePlayerData();
     }
     private void OnApplicationQuit() 
     {
-        LoadPlayerData();
+        //LoadPlayerData();
     }
 }

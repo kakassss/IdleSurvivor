@@ -117,4 +117,7 @@ public class BaseGunData
 public class ExpData
 {
     public float totalExp;
+    public List<int> nextLevelRequiredExps;
+    public int currentLevel;
+    [HideInInspector] public int nextLevelRequiredExpIndex;
 }

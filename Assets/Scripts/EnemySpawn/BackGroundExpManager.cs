@@ -9,8 +9,11 @@ using UnityEngine;
 public class BackGroundExpManager : MonoBehaviour
 {
     public static BackGroundExpManager Instance;
-
     private ExpData data;
+
+    private int currentLevel;
+    private int nextlevelExp;
+    private float totalExp;
     private void Awake()
     {
         Instance = this;    
@@ -23,8 +26,22 @@ public class BackGroundExpManager : MonoBehaviour
 
     public void AddExp(float Amount)
     {
-        data.totalExp += Amount;    
+        Debug.Log(data.totalExp + " 1");
+        data.totalExp += Amount; 
+        Debug.Log(data.totalExp + " 2");   
     }
- 
+    private void Update()
+    {
+        LevelUp();    
+    }
+    
+    private void LevelUp()
+    {
+        if(data.totalExp >= data.nextLevelRequiredExps[data.nextLevelRequiredExpIndex])
+        {
+            data.currentLevel++;
+            data.nextLevelRequiredExpIndex++;
+        }
+    }
 
 }
