@@ -872,9 +872,9 @@ MonoBehaviour:
         gunName: sa1
         fireofRate: 0.3
         radiusOfDetectArea: 15
-        projectilePrefab: {fileID: 2826325173624406934, guid: 6bcc80c409cd7e64cb9072f43b182720, type: 3}
+        projectilePrefab: {fileID: 4897721432353781075, guid: 382fa94100df95443a4262b0f5ecd30b, type: 3}
     expData:
-      totalExp: 455
+      totalExp: 755
       nextLevelRequiredExps: 64000000e803000088130000e02e0000204e0000
       currentLevel: 2
       nextLevelRequiredExpIndex: 2

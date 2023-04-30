@@ -74,12 +74,12 @@
             "fireofRate": 0.30000001192092898,
             "radiusOfDetectArea": 15.0,
             "projectilePrefab": {
-                "instanceID": 22754
+                "instanceID": 24714
             }
         }
     },
     "expData": {
-        "totalExp": 455.0,
+        "totalExp": 755.0,
         "nextLevelRequiredExps": [
             100,
             1000,
