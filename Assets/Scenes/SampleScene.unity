@@ -872,9 +872,9 @@ MonoBehaviour:
         gunName: sa1
         fireofRate: 0.3
         radiusOfDetectArea: 15
-        projectilePrefab: {fileID: 4897721432353781075, guid: 382fa94100df95443a4262b0f5ecd30b, type: 3}
+        projectilePrefab: {fileID: 2826325173624406934, guid: 6bcc80c409cd7e64cb9072f43b182720, type: 3}
     expData:
-      totalExp: 355
+      totalExp: 455
       nextLevelRequiredExps: 64000000e803000088130000e02e0000204e0000
       currentLevel: 2
       nextLevelRequiredExpIndex: 2
@@ -1014,7 +1014,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52756adf47b6ff948a2f95c0a501a0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunPrefab: {fileID: 0}
 --- !u!1001 &2111547830
 PrefabInstance:
   m_ObjectHideFlags: 0

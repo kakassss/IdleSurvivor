@@ -23,9 +23,9 @@ public class DataManager : MonoBehaviour
     private void OnValidate()
     {
         //SavePlayerData(gameData);
-        gameData = LoadPlayerData();   
+        //gameData = LoadPlayerData();   
         
-        //SavePlayerData(gameData);   
+        SavePlayerData(gameData);   
     }
     
     public GameData LoadPlayerData()

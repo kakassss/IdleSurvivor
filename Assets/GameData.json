@@ -57,7 +57,7 @@
             "fireofRate": 0.6000000238418579,
             "radiusOfDetectArea": 15.0,
             "projectilePrefab": {
-                "instanceID": 25480
+                "instanceID": 22754
             }
         },
         "shotGunData": {
