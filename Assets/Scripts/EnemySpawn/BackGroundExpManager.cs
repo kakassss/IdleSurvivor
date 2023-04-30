@@ -11,9 +11,6 @@ public class BackGroundExpManager : MonoBehaviour
     public static BackGroundExpManager Instance;
     private ExpData data;
 
-    private int currentLevel;
-    private int nextlevelExp;
-    private float totalExp;
     private void Awake()
     {
         Instance = this;    
