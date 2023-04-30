@@ -6,7 +6,6 @@ public class PistolGun : BaseGun
 {
     private PistolGunData data;
 
-
     protected override void Start()
     {
         data = DataManager.Instance.gameData.gunsData.pistolGunData;
@@ -14,6 +13,7 @@ public class PistolGun : BaseGun
         fireOfRate = data.fireofRate;
         projectilePrefab = data.projectilePrefab;
         radiusOfDetectArea = data.radiusOfDetectArea;
+        
         base.Start();
     }
 

@@ -49,15 +49,15 @@
             "fireofRate": 0.6000000238418579,
             "radiusOfDetectArea": 10.0,
             "projectilePrefab": {
-                "instanceID": 22726
+                "instanceID": 22752
             }
         },
         "sniperGunData": {
             "gunName": "",
-            "fireofRate": 0.0,
-            "radiusOfDetectArea": 0.0,
+            "fireofRate": 0.6000000238418579,
+            "radiusOfDetectArea": 15.0,
             "projectilePrefab": {
-                "instanceID": 0
+                "instanceID": 25480
             }
         },
         "shotGunData": {
@@ -74,12 +74,12 @@
             "fireofRate": 0.30000001192092898,
             "radiusOfDetectArea": 15.0,
             "projectilePrefab": {
-                "instanceID": 22728
+                "instanceID": 22754
             }
         }
     },
     "expData": {
-        "totalExp": 355.0,
+        "totalExp": 455.0,
         "nextLevelRequiredExps": [
             100,
             1000,

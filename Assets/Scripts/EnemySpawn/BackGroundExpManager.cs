@@ -26,9 +26,7 @@ public class BackGroundExpManager : MonoBehaviour
 
     public void AddExp(float Amount)
     {
-        Debug.Log(data.totalExp + " 1");
-        data.totalExp += Amount; 
-        Debug.Log(data.totalExp + " 2");   
+        data.totalExp += Amount;  
     }
     private void Update()
     {
