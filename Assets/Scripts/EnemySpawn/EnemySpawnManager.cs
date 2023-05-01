@@ -7,8 +7,12 @@ public class EnemySpawnManager : MonoBehaviour
     [SerializeField] List<BoxCollider2D> spawnAreas;
     [SerializeField] List<GameObject> enemyTypes;
 
+    [SerializeField] GameObject normalEnemy;
+    [SerializeField] GameObject strongEnemy;
+
     private BackGroundExpManager backGroundExpManager;
     private ExpData expData;
+    private SpawnData spawnData;
 
 
     private float tempTime;
@@ -18,6 +22,7 @@ public class EnemySpawnManager : MonoBehaviour
     {
         backGroundExpManager = GetComponent<BackGroundExpManager>();    
         expData = DataManager.Instance.gameData.expData;
+        spawnData = DataManager.Instance.gameData.spawnData;
     }
 
     private Vector2 CalculateSpawnerAreaPos(BoxCollider2D area)
@@ -30,29 +35,19 @@ public class EnemySpawnManager : MonoBehaviour
         return randomPos;
     }
 
-    private void SpawnEnemy()
+    private void SpawnEnemy(float enemySpawnRate,GameObject enemy,int enemyMaxSpawnLevel)
     {
         tempTime += Time.deltaTime;
-        if(tempTime >= spawnRate)
+        enemySpawnRate = CalculateSpawnRate(enemySpawnRate);
+        Debug.Log(enemySpawnRate + " enemySpawnRate");
+        if(tempTime >= enemySpawnRate)
         {
             int randomArea = Random.Range(0,spawnAreas.Count);
             Vector2 randomPos = CalculateSpawnerAreaPos(spawnAreas[randomArea]);
-            if(expData.currentLevel <=5)
-            {
-                GameObject randomEnemy = enemyTypes[Random.Range(0,0)];
-                GameObject enemy = Instantiate(randomEnemy,randomPos,Quaternion.identity);
-            }
 
-            if(expData.currentLevel >=10)
+            if(expData.currentLevel <= enemyMaxSpawnLevel)
             {
-                GameObject randomEnemy = enemyTypes[Random.Range(0,1)];
-                GameObject enemy = Instantiate(randomEnemy,randomPos,Quaternion.identity);
-            }
-
-            if(expData.currentLevel >=15)
-            {
-                GameObject randomEnemy = enemyTypes[Random.Range(0,2)];
-                GameObject enemy = Instantiate(randomEnemy,randomPos,Quaternion.identity);
+                GameObject newEnemy = Instantiate(enemy,randomPos,Quaternion.identity);
             }
 
             tempTime = 0;
@@ -60,9 +55,15 @@ public class EnemySpawnManager : MonoBehaviour
         
     }
 
+    private float CalculateSpawnRate(float enemySpawnRate)
+    {   
+        float half = 4f;
+        return Mathf.Abs(enemySpawnRate - expData.currentLevel / half);
+    }
+
     private void Update() 
     {
-        SpawnEnemy();    
+        SpawnEnemy(spawnData.normalEnemySpawnRate,normalEnemy,spawnData.normalEnemyMaxSpawnLevel);    
     }
 
 }

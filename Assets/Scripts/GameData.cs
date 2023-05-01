@@ -12,7 +12,7 @@ public class GameData
     public GunsData gunsData;
 
     public ExpData expData;
-
+    public SpawnData spawnData;
 }
 // ---------------------------------------------------------------
 
@@ -120,4 +120,14 @@ public class ExpData
     public List<int> nextLevelRequiredExps;
     public int currentLevel;
     [HideInInspector] public int nextLevelRequiredExpIndex;
+}
+
+[Serializable]
+public class SpawnData
+{
+    public float normalEnemySpawnRate;
+    public float strongEnemySpawnRate;
+
+    public int normalEnemyMaxSpawnLevel;
+    public int strongEnemyMaxSpawnLevel;
 }

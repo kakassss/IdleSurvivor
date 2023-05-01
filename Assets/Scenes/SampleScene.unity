@@ -310,7 +310,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -6, y: 0}
+  m_Offset: {x: -4.6, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -321,7 +321,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.76, y: 20}
+  m_Size: {x: 0.76, y: 13}
   m_EdgeRadius: 0
 --- !u!4 &315702702
 Transform:
@@ -349,6 +349,10 @@ PrefabInstance:
     - target: {fileID: 7018019130532107913, guid: 57b67368e9eadee488983b8f57049721, type: 3}
       propertyPath: m_Name
       value: StrongEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018019130532107913, guid: 57b67368e9eadee488983b8f57049721, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7018019130532107915, guid: 57b67368e9eadee488983b8f57049721, type: 3}
       propertyPath: m_RootOrder
@@ -427,7 +431,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 6, y: 0}
+  m_Offset: {x: 4.6, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -438,7 +442,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.76, y: 20}
+  m_Size: {x: 0.76, y: 13}
   m_EdgeRadius: 0
 --- !u!4 &332456174
 Transform:
@@ -596,6 +600,8 @@ MonoBehaviour:
   enemyTypes:
   - {fileID: 8933251029159348699, guid: b078235470d3055429e6e38f7542bc74, type: 3}
   - {fileID: 7018019130532107913, guid: 57b67368e9eadee488983b8f57049721, type: 3}
+  normalEnemy: {fileID: 8933251029159348699, guid: b078235470d3055429e6e38f7542bc74, type: 3}
+  strongEnemy: {fileID: 7018019130532107913, guid: 57b67368e9eadee488983b8f57049721, type: 3}
 --- !u!114 &596462287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -699,7 +705,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 10}
+  m_Offset: {x: 0, y: 7}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -742,7 +748,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -10}
+  m_Offset: {x: 0, y: -7}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -874,10 +880,15 @@ MonoBehaviour:
         radiusOfDetectArea: 15
         projectilePrefab: {fileID: 4897721432353781075, guid: 382fa94100df95443a4262b0f5ecd30b, type: 3}
     expData:
-      totalExp: 755
+      totalExp: 0
       nextLevelRequiredExps: 64000000e803000088130000e02e0000204e0000
       currentLevel: 2
       nextLevelRequiredExpIndex: 2
+    spawnData:
+      normalEnemySpawnRate: 2
+      strongEnemySpawnRate: 2
+      normalEnemyMaxSpawnLevel: 0
+      strongEnemyMaxSpawnLevel: 0
 --- !u!1 &2071553395
 GameObject:
   m_ObjectHideFlags: 0

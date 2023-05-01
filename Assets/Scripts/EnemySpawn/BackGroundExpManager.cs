@@ -32,11 +32,21 @@ public class BackGroundExpManager : MonoBehaviour
     
     private void LevelUp()
     {
+        for (int i = 0; i < data.nextLevelRequiredExps.Count; i++)
+        {
+            if(data.totalExp >= data.nextLevelRequiredExps[i])
+            {
+                data.currentLevel = i;
+                data.nextLevelRequiredExpIndex = i;
+            }
+        }
+
         if(data.totalExp >= data.nextLevelRequiredExps[data.nextLevelRequiredExpIndex])
         {
             data.currentLevel++;
             data.nextLevelRequiredExpIndex++;
         }
+
     }
 
 }

@@ -12,18 +12,19 @@ public class DataManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        gameData = LoadPlayerData(); 
-        //LoadPlayerData();    
+        gameData = LoadPlayerData();    
     }
 
     private void Update() 
     {
         SavePlayerData(gameData);
+
+        
     }
     private void OnValidate()
     {
         //SavePlayerData(gameData);
-        gameData = LoadPlayerData();   
+        //gameData = LoadPlayerData();   
         
         //SavePlayerData(gameData);   
     }
@@ -62,8 +63,5 @@ public class DataManager : MonoBehaviour
         gameData = new GameData();
         //SavePlayerData();
     }
-    private void OnApplicationQuit() 
-    {
-        //LoadPlayerData();
-    }
+
 }
