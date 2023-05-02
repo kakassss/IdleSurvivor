@@ -39,7 +39,6 @@ public class EnemySpawnManager : MonoBehaviour
     {
         tempTime += Time.deltaTime;
         enemySpawnRate = CalculateSpawnRate(enemySpawnRate);
-        Debug.Log(enemySpawnRate + " enemySpawnRate");
         if(tempTime >= enemySpawnRate)
         {
             int randomArea = Random.Range(0,spawnAreas.Count);

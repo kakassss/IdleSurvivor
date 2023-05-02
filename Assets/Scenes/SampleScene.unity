@@ -225,13 +225,17 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4866719042212422345, guid: c097829970e460342834712b1a413aa5, type: 3}
+      propertyPath: pistolprefab
+      value: 
+      objectReference: {fileID: 5321379050619259142, guid: 1f4b1fb1fbf11b74e9532c177f0da961, type: 3}
     - target: {fileID: 8050229985740557600, guid: c097829970e460342834712b1a413aa5, type: 3}
       propertyPath: m_Name
       value: PistolGun
       objectReference: {fileID: 0}
     - target: {fileID: 8050229985740557600, guid: c097829970e460342834712b1a413aa5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8050229985740557606, guid: c097829970e460342834712b1a413aa5, type: 3}
       propertyPath: m_RootOrder
@@ -776,6 +780,73 @@ Transform:
   m_Father: {fileID: 596462285}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1659890231
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2772378188590217427, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772378188590217427, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772378188590217427, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772378188590217427, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772378188590217427, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772378188590217427, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772378188590217427, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772378188590217427, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772378188590217427, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772378188590217427, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772378188590217427, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772378188590217429, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
+      propertyPath: m_Name
+      value: ShotGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772378188590217429, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393867213240598888, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
+      propertyPath: shotgunPrefab
+      value: 
+      objectReference: {fileID: 562030628698657785, guid: 1b66aec3aa82f7f45b64c2cfd31d1cdc, type: 3}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
 --- !u!1 &2033066690
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,7 +943,7 @@ MonoBehaviour:
         gunName: 
         fireofRate: 0
         radiusOfDetectArea: 0
-        projectilePrefab: {fileID: 0}
+        projectilePrefab: {fileID: 2772378188590217429, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
         projectileCount: 0
       playerGunData:
         gunName: sa1
@@ -1025,6 +1096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52756adf47b6ff948a2f95c0a501a0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pistolprefab: {fileID: 0}
 --- !u!1001 &2111547830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1036,6 +1108,10 @@ PrefabInstance:
     - target: {fileID: 7768914535927882618, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
       propertyPath: m_Name
       value: PlayerGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768914535927882618, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7768914535927882620, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
       propertyPath: m_RootOrder

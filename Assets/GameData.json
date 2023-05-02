@@ -14,8 +14,8 @@
         },
         "shotgunData": {
             "projectileName": "",
-            "damage": 0.0,
-            "projectileSpeed": 0.0,
+            "damage": 15.0,
+            "projectileSpeed": 15.0,
             "passThroghInEnemy": 0
         },
         "playerData": {
@@ -46,10 +46,10 @@
     "gunsData": {
         "pistolGunData": {
             "gunName": "",
-            "fireofRate": 0.6000000238418579,
+            "fireofRate": 1.0,
             "radiusOfDetectArea": 10.0,
             "projectilePrefab": {
-                "instanceID": 22752
+                "instanceID": 22826
             }
         },
         "sniperGunData": {
@@ -57,29 +57,29 @@
             "fireofRate": 0.6000000238418579,
             "radiusOfDetectArea": 15.0,
             "projectilePrefab": {
-                "instanceID": 22754
+                "instanceID": 22756
             }
         },
         "shotGunData": {
             "gunName": "",
-            "fireofRate": 0.0,
-            "radiusOfDetectArea": 0.0,
+            "fireofRate": 0.5,
+            "radiusOfDetectArea": 15.0,
             "projectilePrefab": {
-                "instanceID": 0
+                "instanceID": 26992
             },
-            "projectileCount": 0
+            "projectileCount": 5
         },
         "playerGunData": {
             "gunName": "sa1",
             "fireofRate": 0.30000001192092898,
             "radiusOfDetectArea": 15.0,
             "projectilePrefab": {
-                "instanceID": 22756
+                "instanceID": 22758
             }
         }
     },
     "expData": {
-        "totalExp": 20060.0,
+        "totalExp": 59265.0,
         "nextLevelRequiredExps": [
             100,
             1000,
@@ -91,8 +91,8 @@
         "nextLevelRequiredExpIndex": 5
     },
     "spawnData": {
-        "normalEnemySpawnRate": 2.0,
-        "strongEnemySpawnRate": 0.0,
+        "normalEnemySpawnRate": 0.0,
+        "strongEnemySpawnRate": 2.0,
         "normalEnemyMaxSpawnLevel": 15,
         "strongEnemyMaxSpawnLevel": 0
     }

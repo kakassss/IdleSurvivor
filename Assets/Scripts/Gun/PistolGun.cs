@@ -5,16 +5,16 @@ using UnityEngine;
 public class PistolGun : BaseGun
 {
     private PistolGunData data;
-
+    [SerializeField] GameObject pistolprefab;
     protected override void Start()
     {
+        
+        base.Start();
         data = DataManager.Instance.gameData.gunsData.pistolGunData;
 
         fireOfRate = data.fireofRate;
-        projectilePrefab = data.projectilePrefab;
+        projectilePrefab = pistolprefab;
         radiusOfDetectArea = data.radiusOfDetectArea;
-        
-        base.Start();
     }
 
     protected override void InstantiateProjectile()

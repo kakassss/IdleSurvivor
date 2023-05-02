@@ -17,9 +17,7 @@ public class DataManager : MonoBehaviour
 
     private void Update() 
     {
-        SavePlayerData(gameData);
-
-        
+        SavePlayerData(gameData); 
     }
     private void OnValidate()
     {
