@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Enemy\NormalEnemy\NormalEnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Projectile\ProjectileDataHandler.cs" />
+     <Compile Include="Assets\Scripts\Projectile\ShotGunProjectile\ShotGunProjectileDamage.cs" />
      <Compile Include="Assets\Scripts\Projectile\SniperProjectile\SniperProjectileDamage.cs" />
      <Compile Include="Assets\Scripts\EnemyDetectArea.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn\BackGroundExpManager.cs" />
@@ -62,7 +63,12 @@
      <Compile Include="Assets\Scripts\Enemy\StrongEnemy\StrongEnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Gun\SniperGun.cs" />
      <Compile Include="Assets\Scripts\Gun\ShotGun.cs" />
-     <Compile Include="Assets\Scripts\Projectile\ShotGunProjectile\ShotGunProjectileDamage.cs" />
+     <Compile Include="Assets\Scripts\Projectile\SniperProjectile\SniperProjectileMovement.cs" />
+     <Compile Include="Assets\Scripts\Projectile\PistolProjectile\PistolProjectileMovement.cs" />
+     <Compile Include="Assets\Scripts\Projectile\PlayerProjectile\PlayerProjectileMovement.cs" />
+     <Compile Include="Assets\Scripts\Projectile\ShotGunProjectile\ShotGunProjectileMovement.cs" />
+     <Compile Include="Assets\Scripts\Projectile\IProjectile.cs" />
+     <Compile Include="Assets\Scripts\ScreenCollider.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2022.1.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

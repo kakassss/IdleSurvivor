@@ -8,9 +8,9 @@
         },
         "sniperData": {
             "projectileName": "",
-            "damage": 0.0,
-            "projectileSpeed": 0.0,
-            "passThroghInEnemy": 0
+            "damage": 10.0,
+            "projectileSpeed": 15.0,
+            "passThroghInEnemy": 10
         },
         "shotgunData": {
             "projectileName": "",
@@ -47,39 +47,27 @@
         "pistolGunData": {
             "gunName": "",
             "fireofRate": 1.0,
-            "radiusOfDetectArea": 10.0,
-            "projectilePrefab": {
-                "instanceID": 22826
-            }
+            "radiusOfDetectArea": 10.0
         },
         "sniperGunData": {
             "gunName": "",
-            "fireofRate": 0.6000000238418579,
-            "radiusOfDetectArea": 15.0,
-            "projectilePrefab": {
-                "instanceID": 22756
-            }
+            "fireofRate": 0.699999988079071,
+            "radiusOfDetectArea": 10.0
         },
         "shotGunData": {
             "gunName": "",
             "fireofRate": 0.5,
             "radiusOfDetectArea": 15.0,
-            "projectilePrefab": {
-                "instanceID": 26992
-            },
             "projectileCount": 5
         },
         "playerGunData": {
             "gunName": "sa1",
             "fireofRate": 0.30000001192092898,
-            "radiusOfDetectArea": 15.0,
-            "projectilePrefab": {
-                "instanceID": 22758
-            }
+            "radiusOfDetectArea": 15.0
         }
     },
     "expData": {
-        "totalExp": 59265.0,
+        "totalExp": 67210.0,
         "nextLevelRequiredExps": [
             100,
             1000,

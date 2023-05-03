@@ -6,13 +6,13 @@ public class PlayerGun : BaseGun
 {
 
     private PlayerGunData data;
-    
+    [SerializeField] GameObject playerProjectile;
     protected override void Start()
     {
         data = DataManager.Instance.gameData.gunsData.playerGunData;
         
         fireOfRate = data.fireofRate;
-        projectilePrefab = data.projectilePrefab;
+        projectilePrefab = playerProjectile;
         radiusOfDetectArea = data.radiusOfDetectArea;
         base.Start();
     }

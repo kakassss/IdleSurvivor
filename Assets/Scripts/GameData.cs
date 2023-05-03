@@ -109,7 +109,6 @@ public class BaseGunData
     public string gunName;
     public float fireofRate;
     public float radiusOfDetectArea;
-    [HideInInspector] public GameObject projectilePrefab;
 }
 //----------------------------Exp DATA----------------------------
 

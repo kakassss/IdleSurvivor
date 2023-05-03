@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SniperProjectile
       objectReference: {fileID: 0}
+    - target: {fileID: 1774078356636632753, guid: df5daeb1ec363e64cac40a35e026cf2c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774078356636632753, guid: df5daeb1ec363e64cac40a35e026cf2c, type: 3}
+      propertyPath: m_TagString
+      value: SniperProjectile
+      objectReference: {fileID: 0}
     - target: {fileID: 1774078356636632755, guid: df5daeb1ec363e64cac40a35e026cf2c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -56,6 +64,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8678538043011323782, guid: df5daeb1ec363e64cac40a35e026cf2c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: df5daeb1ec363e64cac40a35e026cf2c, type: 3}
@@ -64,6 +76,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1774078356636632753, guid: df5daeb1ec363e64cac40a35e026cf2c, type: 3}
   m_PrefabInstance: {fileID: 4586869048627266855}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1177146890930466121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2826325173624406934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d9d18e005f55f4e973a7062746d120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2285400604831384535
 MonoBehaviour:
   m_ObjectHideFlags: 0

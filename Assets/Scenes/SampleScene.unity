@@ -463,6 +463,73 @@ Transform:
   m_Father: {fileID: 596462285}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &413994926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 413994927}
+  - component: {fileID: 413994928}
+  - component: {fileID: 413994929}
+  m_Layer: 9
+  m_Name: Wall
+  m_TagString: Wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &413994927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413994926}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &413994928
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413994926}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: e99f755534292fe479239008e1ff8e63, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.5, y: 0}
+  - {x: 0.5, y: 0}
+  m_AdjacentStartPoint: {x: 1.98, y: 2.09}
+  m_AdjacentEndPoint: {x: 2.87, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!114 &413994929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413994926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c82ddfe2e97f54e81598bb41d90f2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,6 +731,69 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1080325477
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8350584067645296257, guid: c9f840cd5d131ef428882f457f939ebe, type: 3}
+      propertyPath: m_Name
+      value: SniperGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350584067645296257, guid: c9f840cd5d131ef428882f457f939ebe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350584067645296263, guid: c9f840cd5d131ef428882f457f939ebe, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350584067645296263, guid: c9f840cd5d131ef428882f457f939ebe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350584067645296263, guid: c9f840cd5d131ef428882f457f939ebe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350584067645296263, guid: c9f840cd5d131ef428882f457f939ebe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350584067645296263, guid: c9f840cd5d131ef428882f457f939ebe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350584067645296263, guid: c9f840cd5d131ef428882f457f939ebe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350584067645296263, guid: c9f840cd5d131ef428882f457f939ebe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350584067645296263, guid: c9f840cd5d131ef428882f457f939ebe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350584067645296263, guid: c9f840cd5d131ef428882f457f939ebe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350584067645296263, guid: c9f840cd5d131ef428882f457f939ebe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350584067645296263, guid: c9f840cd5d131ef428882f457f939ebe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: c9f840cd5d131ef428882f457f939ebe, type: 3}
 --- !u!1 &1083761757
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772378188590217429, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7393867213240598888, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
       propertyPath: shotgunPrefab
@@ -933,23 +1063,19 @@ MonoBehaviour:
         gunName: 
         fireofRate: 0.6
         radiusOfDetectArea: 10
-        projectilePrefab: {fileID: 5321379050619259142, guid: 1f4b1fb1fbf11b74e9532c177f0da961, type: 3}
       sniperGunData:
         gunName: 
         fireofRate: 0.6
         radiusOfDetectArea: 15
-        projectilePrefab: {fileID: 2826325173624406934, guid: 6bcc80c409cd7e64cb9072f43b182720, type: 3}
       shotGunData:
         gunName: 
         fireofRate: 0
         radiusOfDetectArea: 0
-        projectilePrefab: {fileID: 2772378188590217429, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
         projectileCount: 0
       playerGunData:
         gunName: sa1
         fireofRate: 0.3
         radiusOfDetectArea: 15
-        projectilePrefab: {fileID: 4897721432353781075, guid: 382fa94100df95443a4262b0f5ecd30b, type: 3}
     expData:
       totalExp: 0
       nextLevelRequiredExps: 64000000e803000088130000e02e0000204e0000

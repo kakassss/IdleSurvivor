@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BaseProjectileDamage : MonoBehaviour
+public abstract class BaseProjectileDamage : MonoBehaviour,IProjectile
 {
     protected float gunDamage;
     protected float passThroghEnemyCounter;

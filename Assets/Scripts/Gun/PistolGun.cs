@@ -9,12 +9,12 @@ public class PistolGun : BaseGun
     protected override void Start()
     {
         
+        radiusOfDetectArea = data.radiusOfDetectArea;
         base.Start();
         data = DataManager.Instance.gameData.gunsData.pistolGunData;
 
         fireOfRate = data.fireofRate;
         projectilePrefab = pistolprefab;
-        radiusOfDetectArea = data.radiusOfDetectArea;
     }
 
     protected override void InstantiateProjectile()

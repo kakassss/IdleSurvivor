@@ -5,13 +5,14 @@ using UnityEngine;
 public class SniperGun : BaseGun
 {
     private SniperGunData data;
-
+    [SerializeField] private GameObject sniperProjectile;
     protected override void Start()
     {
         data = DataManager.Instance.gameData.gunsData.sniperGunData;
 
         fireOfRate = data.fireofRate;
-        projectilePrefab = data.projectilePrefab;
+        projectilePrefab = sniperProjectile;
+        radiusOfDetectArea = data.radiusOfDetectArea;
         base.Start();
     }
 

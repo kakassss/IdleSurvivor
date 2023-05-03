@@ -80,3 +80,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581467f865eda0648a70b6ce707550b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sniperProjectile: {fileID: 2826325173624406934, guid: 6bcc80c409cd7e64cb9072f43b182720, type: 3}

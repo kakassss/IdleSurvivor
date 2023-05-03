@@ -24,7 +24,7 @@ public abstract class BaseGun : MonoBehaviour
     protected virtual void Start()
     {
         detectArea = GetComponent<CircleCollider2D>();
-        //detectArea.radius = radiusOfDetectArea;
+        detectArea.radius = radiusOfDetectArea;
         //DataManager.Instance.LoadPlayerData(); // updatedeki örnek gibi, pek bi işlevi yok hatta virtual olmasına bile şimdilik gerek yok
                                     // ama dursun şimdilik
     }

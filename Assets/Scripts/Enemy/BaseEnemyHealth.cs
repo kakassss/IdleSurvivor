@@ -35,8 +35,7 @@ public abstract class BaseEnemyHealth : MonoBehaviour
 
     protected void OnTriggerEnter2D(Collider2D other)
     {
-        if(!other.CompareTag("Projectile")) return;
-
+        if(!other.TryGetComponent<IProjectile>(out IProjectile bullet)) return;
         knockBackCor = StartCoroutine(KnockBack(other.gameObject,rb));  
     }
 

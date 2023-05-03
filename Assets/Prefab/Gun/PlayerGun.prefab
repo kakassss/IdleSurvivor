@@ -76,3 +76,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d258d68dcab5a16478f2846e46e8adee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerProjectile: {fileID: 4897721432353781075, guid: 382fa94100df95443a4262b0f5ecd30b, type: 3}
