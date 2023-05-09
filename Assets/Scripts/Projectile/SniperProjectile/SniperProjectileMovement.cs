@@ -17,6 +17,6 @@ public class SniperProjectileMovement : ProjectileMovement
     {
         rigidbody2D.AddForce(transform.right * data.projectileSpeed,ForceMode2D.Impulse);
     }
-
+    
 
 }

@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class EnemyDetectArea : MonoBehaviour
 {
-    public static EnemyDetectArea Instance;
-
-    private void Awake()
+    [SerializeField] LayerMask wallLayer;
+    private CircleCollider2D circleCollider2D;
+    private void Start() 
     {
-        Instance = this;    
+        circleCollider2D = GetComponent<CircleCollider2D>();
     }
-    public List<GameObject> enemyList = new List<GameObject>();
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(!other.gameObject.CompareTag("Enemy")) return;
+        if(!other.CompareTag("SniperProjectile")) return;
 
-        enemyList.Add(other.gameObject);    
-        //DebugEnemyList();
+        var collerderRB = other.GetComponent<Rigidbody2D>();
+        
+        RaycastHit2D hit2D = Physics2D.Raycast(other.transform.position,collerderRB.velocity,wallLayer);
+        RaycastHit2D hit2D1 = Physics2D.Raycast(other.transform.position,collerderRB.velocity + collerderRB.velocity /4,wallLayer);
+        Debug.DrawRay(other.transform.position,collerderRB.velocity,Color.blue,0.1f);
+        Vector2 contantPoint = hit2D.point;
+        
+        Vector2 normal = Vector2.Perpendicular(circleCollider2D.ClosestPoint(contantPoint)).normalized;
+
+        collerderRB.velocity = Vector2.Reflect(collerderRB.velocity ,normal);
+
+        float angle = Mathf.Atan2(collerderRB.velocity.y, collerderRB.velocity.x) * Mathf.Rad2Deg;
+        other.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
-    public void RemoveEnemyQueue(GameObject enemy)
-    {
-        enemyList.Remove(enemy);
-    }
-
-
-    private void DebugEnemyList()
-    {
-        Debug.Log("enemy count: " + enemyList.Count);
-    }    
+    
 
 }

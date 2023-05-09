@@ -73,7 +73,7 @@ public abstract class BaseGun : MonoBehaviour
     {
         if(enemyList.Count == 0)
         {
-            Debug.Log("No Enemy Found");
+            //Debug.Log("No Enemy Found");
             return null;
         }
 

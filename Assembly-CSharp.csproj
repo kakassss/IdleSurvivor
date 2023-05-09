@@ -45,13 +45,17 @@
      <Compile Include="Assets\Scripts\Gun\PlayerGun.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyDataSO.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyDataHandler.cs" />
+     <Compile Include="Assets\Scripts\ScreenCollider.cs" />
      <Compile Include="Assets\Scripts\DataManager.cs" />
      <Compile Include="Assets\Scripts\Projectile\BaseProjectileDamage.cs" />
      <Compile Include="Assets\Scripts\Projectile\ProjectileDataSO.cs" />
      <Compile Include="Assets\Scripts\Helper\FindPlayerPosition.cs" />
      <Compile Include="Assets\Scripts\Projectile\ProjectileMovement.cs" />
+     <Compile Include="Assets\Scripts\Projectile\PistolProjectile\PistolProjectileMovement.cs" />
      <Compile Include="Assets\Scripts\Gun\PistolGun.cs" />
+     <Compile Include="Assets\Scripts\Projectile\PlayerProjectile\PlayerProjectileMovement.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn\EnemySpawnManager.cs" />
+     <Compile Include="Assets\waller.cs" />
      <Compile Include="Assets\Scripts\Enemy\StrongEnemy\StrongEnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Projectile\PlayerProjectile\PlayerProjectileDamage.cs" />
      <Compile Include="Assets\Scripts\Enemy\BaseEnemyHealth.cs" />
@@ -61,14 +65,11 @@
      <Compile Include="Assets\Scripts\GameData.cs" />
      <Compile Include="Assets\Scripts\Gun\BaseGun.cs" />
      <Compile Include="Assets\Scripts\Enemy\StrongEnemy\StrongEnemyMovement.cs" />
-     <Compile Include="Assets\Scripts\Gun\SniperGun.cs" />
-     <Compile Include="Assets\Scripts\Gun\ShotGun.cs" />
-     <Compile Include="Assets\Scripts\Projectile\SniperProjectile\SniperProjectileMovement.cs" />
-     <Compile Include="Assets\Scripts\Projectile\PistolProjectile\PistolProjectileMovement.cs" />
-     <Compile Include="Assets\Scripts\Projectile\PlayerProjectile\PlayerProjectileMovement.cs" />
      <Compile Include="Assets\Scripts\Projectile\ShotGunProjectile\ShotGunProjectileMovement.cs" />
+     <Compile Include="Assets\Scripts\Gun\SniperGun.cs" />
+     <Compile Include="Assets\Scripts\Projectile\SniperProjectile\SniperProjectileMovement.cs" />
+     <Compile Include="Assets\Scripts\Gun\ShotGun.cs" />
      <Compile Include="Assets\Scripts\Projectile\IProjectile.cs" />
-     <Compile Include="Assets\Scripts\ScreenCollider.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2022.1.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

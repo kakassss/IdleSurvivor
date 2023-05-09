@@ -9,7 +9,7 @@
         "sniperData": {
             "projectileName": "",
             "damage": 10.0,
-            "projectileSpeed": 15.0,
+            "projectileSpeed": 10.0,
             "passThroghInEnemy": 10
         },
         "shotgunData": {
@@ -67,7 +67,7 @@
         }
     },
     "expData": {
-        "totalExp": 67210.0,
+        "totalExp": 87070.0,
         "nextLevelRequiredExps": [
             100,
             1000,
