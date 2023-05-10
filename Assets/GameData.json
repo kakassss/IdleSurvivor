@@ -67,7 +67,7 @@
         }
     },
     "expData": {
-        "totalExp": 87070.0,
+        "totalExp": 96760.0,
         "nextLevelRequiredExps": [
             100,
             1000,
@@ -83,5 +83,9 @@
         "strongEnemySpawnRate": 2.0,
         "normalEnemyMaxSpawnLevel": 15,
         "strongEnemyMaxSpawnLevel": 0
+    },
+    "stagesData": {
+        "currentStage": 2,
+        "currentStageWave": 0
     }
 }

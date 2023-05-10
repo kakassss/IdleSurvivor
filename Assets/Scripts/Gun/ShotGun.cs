@@ -12,11 +12,11 @@ public class ShotGun : BaseGun
 
     protected override void Start()
     {
-
-        radiusOfDetectArea = data.radiusOfDetectArea;
-        base.Start();
-
         data = DataManager.Instance.gameData.gunsData.shotGunData;
+
+        base.Start();
+        detectArea.radius = data.radiusOfDetectArea;
+
         fireOfRate = data.fireofRate;
         projectilePrefab = shotgunPrefab;
         projectileCount = data.projectileCount;

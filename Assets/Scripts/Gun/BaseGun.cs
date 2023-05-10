@@ -21,10 +21,13 @@ public abstract class BaseGun : MonoBehaviour
     protected Vector3 direction;
     protected float angle;
 
-    protected virtual void Start()
+    private void Awake() 
     {
         detectArea = GetComponent<CircleCollider2D>();
-        detectArea.radius = radiusOfDetectArea;
+    }
+    protected virtual void Start()
+    {
+        //detectArea.radius = radiusOfDetectArea;
         //DataManager.Instance.LoadPlayerData(); // updatedeki örnek gibi, pek bi işlevi yok hatta virtual olmasına bile şimdilik gerek yok
                                     // ama dursun şimdilik
     }

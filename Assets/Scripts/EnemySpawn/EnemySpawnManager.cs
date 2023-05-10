@@ -11,6 +11,8 @@ public class EnemySpawnManager : MonoBehaviour
     [SerializeField] GameObject strongEnemy;
 
     private BackGroundExpManager backGroundExpManager;
+    private WaveManager waveManager;
+    private StagesData stageData;
     private ExpData expData;
     private SpawnData spawnData;
 
@@ -20,9 +22,14 @@ public class EnemySpawnManager : MonoBehaviour
      
     private void Start()
     {
-        backGroundExpManager = GetComponent<BackGroundExpManager>();    
+        backGroundExpManager = GetComponent<BackGroundExpManager>();
+        waveManager = GetComponent<WaveManager>();
+
+        stageData = DataManager.Instance.gameData.stagesData;
         expData = DataManager.Instance.gameData.expData;
         spawnData = DataManager.Instance.gameData.spawnData;
+
+        currentStage = waveManager.stages[stageData.currentStage].allStages[stageData.currentStageWave];
     }
 
     private Vector2 CalculateSpawnerAreaPos(BoxCollider2D area)
@@ -53,6 +60,54 @@ public class EnemySpawnManager : MonoBehaviour
         }
         
     }
+    private float waveTime;
+    private Stages currentStage;
+    private void SpawnWave()
+    {
+
+        
+        CalculateCurrentStageAndWave();
+        Debug.Log("stageData.currentStage " + stageData.currentStage);
+
+        Debug.Log("stageData.currentStageWave " + stageData.currentStageWave);
+
+
+        tempTime += Time.deltaTime;
+        waveTime += Time.deltaTime;
+
+        float enemySpawnRate = currentStage.wave.time / currentStage.wave.totalEnemy;
+        int randomEnemy = Random.Range(0,currentStage.wave.enemies.Count);
+        
+        if(tempTime >= enemySpawnRate)
+        {
+            int randomArea = Random.Range(0,spawnAreas.Count);
+            Vector2 randomPos = CalculateSpawnerAreaPos(spawnAreas[randomArea]);
+
+            GameObject newEnemy = Instantiate(currentStage.wave.enemies[randomEnemy],randomPos,Quaternion.identity);
+
+            tempTime = 0;
+        }
+    }
+
+    private void CalculateCurrentStageAndWave()
+    {
+        if(waveTime >= currentStage.wave.time)
+        {
+
+            if(stageData.currentStageWave > waveManager.stages[stageData.currentStage].allStages.Count)
+            {
+                stageData.currentStage++;
+                stageData.currentStageWave = 0;
+
+                currentStage = waveManager.stages[stageData.currentStage].allStages[stageData.currentStageWave];
+                return;
+            }
+
+            stageData.currentStageWave++;
+
+            currentStage = waveManager.stages[stageData.currentStage].allStages[stageData.currentStageWave];
+        }
+    }
 
     private float CalculateSpawnRate(float enemySpawnRate)
     {   
@@ -62,7 +117,8 @@ public class EnemySpawnManager : MonoBehaviour
 
     private void Update() 
     {
-        SpawnEnemy(spawnData.normalEnemySpawnRate,normalEnemy,spawnData.normalEnemyMaxSpawnLevel);    
+        SpawnWave();
+        //SpawnEnemy(spawnData.normalEnemySpawnRate,normalEnemy,spawnData.normalEnemyMaxSpawnLevel);    
     }
 
 }

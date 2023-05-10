@@ -13,6 +13,8 @@ public class GameData
 
     public ExpData expData;
     public SpawnData spawnData;
+
+    public StagesData stagesData;
 }
 // ---------------------------------------------------------------
 
@@ -129,4 +131,11 @@ public class SpawnData
 
     public int normalEnemyMaxSpawnLevel;
     public int strongEnemyMaxSpawnLevel;
+}
+
+[Serializable]
+public class StagesData
+{
+    public int currentStage;
+    public int currentStageWave;
 }
