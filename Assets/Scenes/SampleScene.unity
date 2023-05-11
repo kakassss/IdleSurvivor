@@ -779,32 +779,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stages:
-  - allStages:
+  - allWaves:
     - wave:
         time: 1
-        totalEnemy: 1
-        spawnRate: 0
+        totalEnemy: 10
         enemyPowerMultiplier: 0
         enemies:
         - {fileID: 8933251029159348699, guid: b078235470d3055429e6e38f7542bc74, type: 3}
-        - {fileID: 7018019130532107913, guid: 57b67368e9eadee488983b8f57049721, type: 3}
-    - wave:
-        time: 2
-        totalEnemy: 2
-        spawnRate: 0
-        enemyPowerMultiplier: 0
-        enemies:
-        - {fileID: 8933251029159348699, guid: b078235470d3055429e6e38f7542bc74, type: 3}
-        - {fileID: 7018019130532107913, guid: 57b67368e9eadee488983b8f57049721, type: 3}
-  - allStages:
-    - wave:
-        time: 15
-        totalEnemy: 15
-        spawnRate: 0
-        enemyPowerMultiplier: 0
-        enemies:
-        - {fileID: 8933251029159348699, guid: b078235470d3055429e6e38f7542bc74, type: 3}
-        - {fileID: 7018019130532107913, guid: 57b67368e9eadee488983b8f57049721, type: 3}
 --- !u!1 &711581609
 GameObject:
   m_ObjectHideFlags: 0

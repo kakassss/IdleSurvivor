@@ -11,7 +11,7 @@ public class WaveManager : MonoBehaviour
 [Serializable]
 public class ListWrapper
 {
-    public List<Stages> allStages;
+    public List<Stages> allWaves;
 }
 
 [Serializable]
@@ -25,7 +25,7 @@ public class Waves
 {
     public int time;
     public int totalEnemy;
-    public int spawnRate;
+    // public int spawnRate;
     public int enemyPowerMultiplier;
     public List<GameObject> enemies;
 }

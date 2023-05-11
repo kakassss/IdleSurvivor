@@ -64,13 +64,13 @@
      <Compile Include="Assets\Scripts\Enemy\NormalEnemy\NormalEnemyMovement.cs" />
      <Compile Include="Assets\Scripts\GameData.cs" />
      <Compile Include="Assets\Scripts\Gun\BaseGun.cs" />
+     <Compile Include="Assets\Scripts\EnemySpawn\WaveManager.cs" />
      <Compile Include="Assets\Scripts\Enemy\StrongEnemy\StrongEnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Projectile\ShotGunProjectile\ShotGunProjectileMovement.cs" />
      <Compile Include="Assets\Scripts\Gun\SniperGun.cs" />
      <Compile Include="Assets\Scripts\Projectile\SniperProjectile\SniperProjectileMovement.cs" />
      <Compile Include="Assets\Scripts\Gun\ShotGun.cs" />
      <Compile Include="Assets\Scripts\Projectile\IProjectile.cs" />
-     <Compile Include="Assets\Scripts\EnemySpawn\WaveManager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

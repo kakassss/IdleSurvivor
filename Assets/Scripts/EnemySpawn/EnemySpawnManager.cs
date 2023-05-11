@@ -29,7 +29,7 @@ public class EnemySpawnManager : MonoBehaviour
         expData = DataManager.Instance.gameData.expData;
         spawnData = DataManager.Instance.gameData.spawnData;
 
-        currentStage = waveManager.stages[stageData.currentStage].allStages[stageData.currentStageWave];
+        currentStage = waveManager.stages[stageData.currentStage].allWaves[stageData.currentStageWave];
     }
 
     private Vector2 CalculateSpawnerAreaPos(BoxCollider2D area)
@@ -42,78 +42,85 @@ public class EnemySpawnManager : MonoBehaviour
         return randomPos;
     }
 
-    private void SpawnEnemy(float enemySpawnRate,GameObject enemy,int enemyMaxSpawnLevel)
-    {
-        tempTime += Time.deltaTime;
-        enemySpawnRate = CalculateSpawnRate(enemySpawnRate);
-        if(tempTime >= enemySpawnRate)
-        {
-            int randomArea = Random.Range(0,spawnAreas.Count);
-            Vector2 randomPos = CalculateSpawnerAreaPos(spawnAreas[randomArea]);
+    // private void SpawnEnemy(float enemySpawnRate,GameObject enemy,int enemyMaxSpawnLevel)
+    // {
+    //     tempTime += Time.deltaTime;
+    //     enemySpawnRate = CalculateSpawnRate(enemySpawnRate);
+    //     if(tempTime >= enemySpawnRate)
+    //     {
+    //         int randomArea = Random.Range(0,spawnAreas.Count);
+    //         Vector2 randomPos = CalculateSpawnerAreaPos(spawnAreas[randomArea]);
 
-            if(expData.currentLevel <= enemyMaxSpawnLevel)
-            {
-                GameObject newEnemy = Instantiate(enemy,randomPos,Quaternion.identity);
-            }
+    //         if(expData.currentLevel <= enemyMaxSpawnLevel)
+    //         {
+    //             GameObject newEnemy = Instantiate(enemy,randomPos,Quaternion.identity);
+    //         }
 
-            tempTime = 0;
-        }
+    //         tempTime = 0;
+    //     }
         
-    }
+    // }
     private float waveTime;
     private Stages currentStage;
+    private float enemyCount;
+    List<GameObject> newEnemyes = new List<GameObject>();
     private void SpawnWave()
     {
-
         
-        CalculateCurrentStageAndWave();
-        Debug.Log("stageData.currentStage " + stageData.currentStage);
+        if(newEnemyes.Count >= currentStage.wave.totalEnemy)
+        {
+            Debug.Log("newEnemyes waveX " + newEnemyes.Count);
+            CalculateCurrentStageAndWave();
+            return; 
+        } 
 
+        Debug.Log("stageData.currentStage " + stageData.currentStage);
         Debug.Log("stageData.currentStageWave " + stageData.currentStageWave);
 
-
         tempTime += Time.deltaTime;
-        waveTime += Time.deltaTime;
 
-        float enemySpawnRate = currentStage.wave.time / currentStage.wave.totalEnemy;
+        float enemySpawnRate = (float)currentStage.wave.time / (float)currentStage.wave.totalEnemy;
         int randomEnemy = Random.Range(0,currentStage.wave.enemies.Count);
         
-        if(tempTime >= enemySpawnRate)
+
+        if(tempTime > enemySpawnRate)
         {
             int randomArea = Random.Range(0,spawnAreas.Count);
             Vector2 randomPos = CalculateSpawnerAreaPos(spawnAreas[randomArea]);
 
             GameObject newEnemy = Instantiate(currentStage.wave.enemies[randomEnemy],randomPos,Quaternion.identity);
-
+            newEnemyes.Add(newEnemy);
             tempTime = 0;
         }
     }
 
     private void CalculateCurrentStageAndWave()
     {
-        if(waveTime >= currentStage.wave.time)
+        
+        if(stageData.currentStageWave + 1 == waveManager.stages[stageData.currentStage].allWaves.Count)
         {
 
-            if(stageData.currentStageWave > waveManager.stages[stageData.currentStage].allStages.Count)
-            {
-                stageData.currentStage++;
-                stageData.currentStageWave = 0;
+            if(stageData.currentStage + 1 == waveManager.stages.Count) return;
 
-                currentStage = waveManager.stages[stageData.currentStage].allStages[stageData.currentStageWave];
-                return;
-            }
+            stageData.currentStage++;
+            stageData.currentStageWave = 0;
 
-            stageData.currentStageWave++;
+            newEnemyes.Clear();
+            currentStage = waveManager.stages[stageData.currentStage].allWaves[stageData.currentStageWave];
+            return;
 
-            currentStage = waveManager.stages[stageData.currentStage].allStages[stageData.currentStageWave];
         }
+
+        newEnemyes.Clear();
+        stageData.currentStageWave++;
+        currentStage = waveManager.stages[stageData.currentStage].allWaves[stageData.currentStageWave];
     }
 
-    private float CalculateSpawnRate(float enemySpawnRate)
-    {   
-        float half = 4f;
-        return Mathf.Abs(enemySpawnRate - expData.currentLevel / half);
-    }
+    // private float CalculateSpawnRate(float enemySpawnRate)
+    // {   
+    //     float half = 4f;
+    //     return Mathf.Abs(enemySpawnRate - expData.currentLevel / half);
+    // }
 
     private void Update() 
     {
