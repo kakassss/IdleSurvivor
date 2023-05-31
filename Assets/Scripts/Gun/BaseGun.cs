@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,29 +24,24 @@ public abstract class BaseGun : MonoBehaviour
     {
         detectArea = GetComponent<CircleCollider2D>();
     }
-    protected virtual void Start()
-    {
-        //detectArea.radius = radiusOfDetectArea;
-        //DataManager.Instance.LoadPlayerData(); // updatedeki örnek gibi, pek bi işlevi yok hatta virtual olmasına bile şimdilik gerek yok
-                                    // ama dursun şimdilik
-    }
 
     protected virtual void Fire()
     {
         tempTime += Time.deltaTime;
         if(tempTime >= fireOfRate)
         {
-            
             FireToClosestEnemy();
             tempTime = 0f;
         }
     }
+
     protected void CalculateClosestEnemyPos()
     {
         closestEnemyPos = FindClosestEnemy().transform; // find closest enemy position
         direction = closestEnemyPos.position - transform.position; // find projectile direction
         angle = Vector3.Angle(Vector3.right,direction); // Calculate projectile rotation
     }
+
     protected void FireToClosestEnemy()
     {
         CalculateClosestEnemyPos();
@@ -62,8 +56,8 @@ public abstract class BaseGun : MonoBehaviour
         {
             InstantiateProjectile();
         }
-
     }
+
     protected void PlayerInput()
     {
         if(Input.GetKey(KeyCode.Mouse0))
@@ -76,7 +70,6 @@ public abstract class BaseGun : MonoBehaviour
     {
         if(enemyList.Count == 0)
         {
-            //Debug.Log("No Enemy Found");
             return null;
         }
 
@@ -111,13 +104,15 @@ public abstract class BaseGun : MonoBehaviour
 
         enemyList.Remove(other.gameObject);
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position,2);    
-    }
+    
+    // Use this gun circle area gizmos
+    // private void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.blue;
+    //     Gizmos.DrawWireSphere(transform.position,2);    
+    // }
 
     protected abstract void InstantiateProjectile(); // abstract yapmamım sebebi shotgun gibi etrafa sacılan projecileların olması
     protected abstract void Update();
+    protected abstract void Start();
 }

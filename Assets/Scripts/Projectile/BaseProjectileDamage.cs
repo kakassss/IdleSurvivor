@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class BaseProjectileDamage : MonoBehaviour,IProjectile
@@ -8,9 +6,6 @@ public abstract class BaseProjectileDamage : MonoBehaviour,IProjectile
     protected float passThroghEnemyCounter;
     protected float projectileSpeed;
     
-
-    
-
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Enemy")

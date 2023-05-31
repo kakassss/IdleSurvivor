@@ -13,7 +13,6 @@ public class SniperGun : BaseGun
         fireOfRate = data.fireofRate;
         projectilePrefab = sniperProjectile;
         radiusOfDetectArea = data.radiusOfDetectArea;
-        base.Start();
     }
 
     protected override void InstantiateProjectile()
@@ -31,8 +30,5 @@ public class SniperGun : BaseGun
     protected override void Update()
     {
         Fire();
-        //dataManager.gameData.projectileData.damage +=1;
-        //DataManager.Instance.SavePlayerData(); // bunu ilerde bi şeyler için kullanabilirsin dursun şimdilik, zaten bu update calısmıyor
-        //Fire();
     }
 }

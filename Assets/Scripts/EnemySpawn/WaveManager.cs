@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -25,7 +24,6 @@ public class Waves
 {
     public int time;
     public int totalEnemy;
-    // public int spawnRate;
     public int enemyPowerMultiplier;
     public List<GameObject> enemies;
 }

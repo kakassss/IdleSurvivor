@@ -37,32 +37,27 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Enemy\NormalEnemy\NormalEnemyHealth.cs" />
-     <Compile Include="Assets\Scripts\Projectile\ProjectileDataHandler.cs" />
      <Compile Include="Assets\Scripts\Projectile\ShotGunProjectile\ShotGunProjectileDamage.cs" />
      <Compile Include="Assets\Scripts\Projectile\SniperProjectile\SniperProjectileDamage.cs" />
-     <Compile Include="Assets\Scripts\EnemyDetectArea.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn\BackGroundExpManager.cs" />
      <Compile Include="Assets\Scripts\Gun\PlayerGun.cs" />
-     <Compile Include="Assets\Scripts\Enemy\EnemyDataSO.cs" />
-     <Compile Include="Assets\Scripts\Enemy\EnemyDataHandler.cs" />
-     <Compile Include="Assets\Scripts\ScreenCollider.cs" />
-     <Compile Include="Assets\Scripts\DataManager.cs" />
+     <Compile Include="Assets\Scripts\Projectile\ScreenCollider.cs" />
+     <Compile Include="Assets\Scripts\GameData\DataManager.cs" />
      <Compile Include="Assets\Scripts\Projectile\BaseProjectileDamage.cs" />
-     <Compile Include="Assets\Scripts\Projectile\ProjectileDataSO.cs" />
      <Compile Include="Assets\Scripts\Helper\FindPlayerPosition.cs" />
      <Compile Include="Assets\Scripts\Projectile\ProjectileMovement.cs" />
      <Compile Include="Assets\Scripts\Projectile\PistolProjectile\PistolProjectileMovement.cs" />
      <Compile Include="Assets\Scripts\Gun\PistolGun.cs" />
      <Compile Include="Assets\Scripts\Projectile\PlayerProjectile\PlayerProjectileMovement.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn\EnemySpawnManager.cs" />
-     <Compile Include="Assets\waller.cs" />
      <Compile Include="Assets\Scripts\Enemy\StrongEnemy\StrongEnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Projectile\PlayerProjectile\PlayerProjectileDamage.cs" />
      <Compile Include="Assets\Scripts\Enemy\BaseEnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Projectile\PistolProjectile\PistolProjectileDamage.cs" />
      <Compile Include="Assets\Scripts\Enemy\BaseEnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\NormalEnemy\NormalEnemyMovement.cs" />
-     <Compile Include="Assets\Scripts\GameData.cs" />
+     <Compile Include="Assets\Scripts\EnemyDetectArea.cs" />
+     <Compile Include="Assets\Scripts\GameData\GameData.cs" />
      <Compile Include="Assets\Scripts\Gun\BaseGun.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn\WaveManager.cs" />
      <Compile Include="Assets\Scripts\Enemy\StrongEnemy\StrongEnemyMovement.cs" />

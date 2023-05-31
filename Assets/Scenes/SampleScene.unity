@@ -607,9 +607,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f242a5d1f221f934d98ed046f8c13ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,9 +874,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f242a5d1f221f934d98ed046f8c13ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!58 &972315831
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1203,9 +1197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f242a5d1f221f934d98ed046f8c13ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!1001 &1659890231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1334,9 +1325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f242a5d1f221f934d98ed046f8c13ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!1 &2005425434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,9 +1552,9 @@ MonoBehaviour:
         radiusOfDetectArea: 15
       shotGunData:
         gunName: 
-        fireofRate: 0
-        radiusOfDetectArea: 0
-        projectileCount: 0
+        fireofRate: 1
+        radiusOfDetectArea: 11
+        projectileCount: 5
       playerGunData:
         gunName: sa1
         fireofRate: 0.3

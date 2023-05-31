@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
 
-//Yapılış amacı başka karakterlerin belki daha farklı
-//movement'a ihtiyacı olabilir diye
 public abstract class BaseEnemyMovement : MonoBehaviour
 {
     protected GameObject playerPos;

@@ -14,9 +14,7 @@ public class ShotGun : BaseGun
     {
         data = DataManager.Instance.gameData.gunsData.shotGunData;
 
-        base.Start();
         detectArea.radius = data.radiusOfDetectArea;
-
         fireOfRate = data.fireofRate;
         projectilePrefab = shotgunPrefab;
         projectileCount = data.projectileCount;
@@ -51,7 +49,7 @@ public class ShotGun : BaseGun
             return;
         }
 
-        for (int i = 0; i < projectileCount; i++) // mantık söyle tekli sayı olacak verilen sayı, 
+        for (int i = 0; i < projectileCount; i++)
         {
             projectilePistol = Instantiate(projectilePrefab,transform.position ,Quaternion.Euler(0,0,projectilAngles[i]));
         }

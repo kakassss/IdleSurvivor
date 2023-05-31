@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class ProjectileMovement : MonoBehaviour
@@ -9,14 +7,6 @@ public abstract class ProjectileMovement : MonoBehaviour
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
-
-    // protected void FixedUpdate()
-    // {
-    //     if(rigidbody2D != null)
-    //     {
-    //         rigidbody2D.velocity = transform.right * data.projectileSpeed;
-    //     }           
-    // }
     
     protected abstract void Movement();
     private void OnBecameInvisible()

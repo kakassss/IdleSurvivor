@@ -5,11 +5,6 @@ using UnityEngine;
 public class EnemySpawnManager : MonoBehaviour
 {
     [SerializeField] List<BoxCollider2D> spawnAreas;
-    [SerializeField] List<GameObject> enemyTypes;
-
-    [SerializeField] GameObject normalEnemy;
-    [SerializeField] GameObject strongEnemy;
-
     private BackGroundExpManager backGroundExpManager;
     private WaveManager waveManager;
     private StagesData stageData;
@@ -17,8 +12,9 @@ public class EnemySpawnManager : MonoBehaviour
     private SpawnData spawnData;
 
 
-    private float tempTime;
-    private float spawnRate = 3f;
+    private float currentSpawnTimer;
+    private Stages currentStage;
+    List<GameObject> newEnemies = new List<GameObject>();
      
     private void Start()
     {
@@ -42,34 +38,13 @@ public class EnemySpawnManager : MonoBehaviour
         return randomPos;
     }
 
-    // private void SpawnEnemy(float enemySpawnRate,GameObject enemy,int enemyMaxSpawnLevel)
-    // {
-    //     tempTime += Time.deltaTime;
-    //     enemySpawnRate = CalculateSpawnRate(enemySpawnRate);
-    //     if(tempTime >= enemySpawnRate)
-    //     {
-    //         int randomArea = Random.Range(0,spawnAreas.Count);
-    //         Vector2 randomPos = CalculateSpawnerAreaPos(spawnAreas[randomArea]);
 
-    //         if(expData.currentLevel <= enemyMaxSpawnLevel)
-    //         {
-    //             GameObject newEnemy = Instantiate(enemy,randomPos,Quaternion.identity);
-    //         }
-
-    //         tempTime = 0;
-    //     }
-        
-    // }
-    private float waveTime;
-    private Stages currentStage;
-    private float enemyCount;
-    List<GameObject> newEnemyes = new List<GameObject>();
+    
     private void SpawnWave()
     {
         
-        if(newEnemyes.Count >= currentStage.wave.totalEnemy)
+        if(newEnemies.Count >= currentStage.wave.totalEnemy)
         {
-            Debug.Log("newEnemyes waveX " + newEnemyes.Count);
             CalculateCurrentStageAndWave();
             return; 
         } 
@@ -77,20 +52,20 @@ public class EnemySpawnManager : MonoBehaviour
         Debug.Log("stageData.currentStage " + stageData.currentStage);
         Debug.Log("stageData.currentStageWave " + stageData.currentStageWave);
 
-        tempTime += Time.deltaTime;
+        currentSpawnTimer += Time.deltaTime;
 
         float enemySpawnRate = (float)currentStage.wave.time / (float)currentStage.wave.totalEnemy;
         int randomEnemy = Random.Range(0,currentStage.wave.enemies.Count);
         
 
-        if(tempTime > enemySpawnRate)
+        if(currentSpawnTimer > enemySpawnRate)
         {
             int randomArea = Random.Range(0,spawnAreas.Count);
             Vector2 randomPos = CalculateSpawnerAreaPos(spawnAreas[randomArea]);
 
             GameObject newEnemy = Instantiate(currentStage.wave.enemies[randomEnemy],randomPos,Quaternion.identity);
-            newEnemyes.Add(newEnemy);
-            tempTime = 0;
+            newEnemies.Add(newEnemy);
+            currentSpawnTimer = 0;
         }
     }
 
@@ -105,13 +80,13 @@ public class EnemySpawnManager : MonoBehaviour
             stageData.currentStage++;
             stageData.currentStageWave = 0;
 
-            newEnemyes.Clear();
+            newEnemies.Clear();
             currentStage = waveManager.stages[stageData.currentStage].allWaves[stageData.currentStageWave];
             return;
 
         }
 
-        newEnemyes.Clear();
+        newEnemies.Clear();
         stageData.currentStageWave++;
         currentStage = waveManager.stages[stageData.currentStage].allWaves[stageData.currentStageWave];
     }

@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using UnityEngine.UI;
 
 public class DataManager : MonoBehaviour
 {
@@ -19,20 +16,11 @@ public class DataManager : MonoBehaviour
     {
         SavePlayerData(gameData); 
     }
-    private void OnValidate()
-    {
-        //SavePlayerData(gameData);
-        //gameData = LoadPlayerData();   
-        
-        //SavePlayerData(gameData);   
-    }
-    
+
     public GameData LoadPlayerData()
     {
-        // Dosyayı oku
-        //burası şimdilik bilgisayar için eğer mobil ise persistentDataPath yapcan
-        
-        string filePath = Application.dataPath + "/GameData.json";
+        // read file
+        string filePath = Application.dataPath + "/GameData.json"; // persistantdatapath
         GameData newGameData = new GameData();
 
         if (File.Exists(filePath))
@@ -50,16 +38,16 @@ public class DataManager : MonoBehaviour
 
     public void SavePlayerData(GameData data)
     {
-        // Dosyayı yaz
+        // write file
         string json = JsonUtility.ToJson(data,true);
         string filePath = Application.dataPath + "/GameData.json";
         File.WriteAllText(filePath, json);
     }
 
+    //Currently not using
     public void ResetPlayerData()
     {
         gameData = new GameData();
-        //SavePlayerData();
     }
 
 }

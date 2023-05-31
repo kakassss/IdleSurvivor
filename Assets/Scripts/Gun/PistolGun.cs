@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PistolGun : BaseGun
@@ -8,11 +6,9 @@ public class PistolGun : BaseGun
     [SerializeField] GameObject pistolprefab;
     protected override void Start()
     {
-        
-        radiusOfDetectArea = data.radiusOfDetectArea;
-        base.Start();
         data = DataManager.Instance.gameData.gunsData.pistolGunData;
 
+        radiusOfDetectArea = data.radiusOfDetectArea;
         fireOfRate = data.fireofRate;
         projectilePrefab = pistolprefab;
     }
@@ -32,8 +28,5 @@ public class PistolGun : BaseGun
     protected override void Update()
     {
         Fire();
-        //dataManager.gameData.projectileData.damage +=1;
-        //DataManager.Instance.SavePlayerData(); // bunu ilerde bi şeyler için kullanabilirsin dursun şimdilik, zaten bu update calısmıyor
-        //Fire();
     }
 }
