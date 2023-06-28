@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerProjectileMovement : ProjectileMovement
+public class PlayerProjectileMovement : BaseProjectileMovement
 {
     private PlayerProjectileData data;
     protected override void Start()

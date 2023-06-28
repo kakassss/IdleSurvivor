@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SniperProjectileMovement : ProjectileMovement
+public class SniperProjectileMovement : BaseProjectileMovement
 {
     private SniperProjectileData data;
     protected override void Start()

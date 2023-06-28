@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class ProjectileMovement : MonoBehaviour
+public abstract class BaseProjectileMovement : MonoBehaviour
 {
     protected Rigidbody2D rigidbody2D;
     protected virtual void Start()
@@ -9,8 +9,5 @@ public abstract class ProjectileMovement : MonoBehaviour
     }
     
     protected abstract void Movement();
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-    }
+    
 }
