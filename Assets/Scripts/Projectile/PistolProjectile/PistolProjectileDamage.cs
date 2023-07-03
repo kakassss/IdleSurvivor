@@ -4,7 +4,7 @@ using UnityEngine;
 public class PistolProjectileDamage : BaseProjectileDamage
 {
     private PistolProjectileData data;
-    private BulletPoolManager pool;
+    private PistolGunPoolManager pool;
 
     private void Start()
     {
@@ -14,7 +14,7 @@ public class PistolProjectileDamage : BaseProjectileDamage
         passThroghEnemyCounter = data.passThroghInEnemy;
         projectileSpeed = data.projectileSpeed;
 
-        pool = BulletPoolManager.Instance;
+        pool = PistolGunPoolManager.Instance;
     }
     
     protected override void OnTriggerEnter2D(Collider2D other)

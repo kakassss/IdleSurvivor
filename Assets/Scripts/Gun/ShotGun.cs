@@ -9,6 +9,7 @@ public class ShotGun : BaseGun
     [SerializeField] float[] projectilAngles;
     [SerializeField] GameObject shotgunPrefab;
     private int projectileCount;
+    private ShotGunPoolManager pool;
 
     protected override void Start()
     {
@@ -20,6 +21,8 @@ public class ShotGun : BaseGun
         projectileCount = data.projectileCount;
 
         projectilAngles = new float[projectileCount];
+
+        pool = ShotGunPoolManager.Instance;
     }
 
     protected override void InstantiateProjectile()
@@ -51,7 +54,10 @@ public class ShotGun : BaseGun
 
         for (int i = 0; i < projectileCount; i++)
         {
-            projectilePistol = Instantiate(projectilePrefab,transform.position ,Quaternion.Euler(0,0,projectilAngles[i]));
+            projectilePistol = pool.GetObject().gameObject;
+            projectilePistol.transform.position = transform.position;
+            projectilePistol.transform.rotation = Quaternion.Euler(0,0,projectilAngles[i]);
+            //projectilePistol = Instantiate(projectilePrefab,transform.position ,Quaternion.Euler(0,0,projectilAngles[i]));
         }
     }
 

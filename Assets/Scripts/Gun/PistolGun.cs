@@ -5,7 +5,7 @@ public class PistolGun : BaseGun
     private PistolGunData data;
     [SerializeField] GameObject pistolprefab;
 
-    private BulletPoolManager pool;
+    private PistolGunPoolManager pool;
     protected override void Start()
     {
         data = DataManager.Instance.gameData.gunsData.pistolGunData;
@@ -14,7 +14,7 @@ public class PistolGun : BaseGun
         fireOfRate = data.fireofRate;
         projectilePrefab = pistolprefab;
 
-        pool = BulletPoolManager.Instance;
+        pool = PistolGunPoolManager.Instance;
 
     }
 

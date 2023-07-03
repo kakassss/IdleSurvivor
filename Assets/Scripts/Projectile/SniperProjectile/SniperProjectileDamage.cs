@@ -3,6 +3,7 @@ using UnityEngine;
 public class SniperProjectileDamage : BaseProjectileDamage
 {
     private SniperProjectileData data;
+    private SniperGunPoolManager pool;
 
     private void Start()
     {
@@ -11,6 +12,8 @@ public class SniperProjectileDamage : BaseProjectileDamage
         gunDamage = data.damage;
         passThroghEnemyCounter = data.passThroghInEnemy;
         projectileSpeed = data.projectileSpeed;
+
+        pool = SniperGunPoolManager.Instance;
     }
     protected override void OnTriggerEnter2D(Collider2D other)
     {
@@ -21,7 +24,7 @@ public class SniperProjectileDamage : BaseProjectileDamage
 
             if (passThroghEnemyCounter == 0)
             {
-                Destroy(gameObject);
+                pool.ReturnObject(this);
             } 
 
             passThroghEnemyCounter--;
@@ -31,7 +34,7 @@ public class SniperProjectileDamage : BaseProjectileDamage
 
     protected override void OnBecameInvisible()
     {
-        
+        pool.ReturnObject(this);
     }
 
 }

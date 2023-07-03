@@ -5,6 +5,7 @@ public class PlayerGun : BaseGun
 
     private PlayerGunData data;
     [SerializeField] GameObject playerProjectile;
+    private PlayerGunPoolManager pool;
     protected override void Start()
     {
         data = DataManager.Instance.gameData.gunsData.playerGunData;
@@ -12,17 +13,25 @@ public class PlayerGun : BaseGun
         fireOfRate = data.fireofRate;
         projectilePrefab = playerProjectile;
         radiusOfDetectArea = data.radiusOfDetectArea;
+
+        pool = PlayerGunPoolManager.Instance;
     }
 
     protected override void InstantiateProjectile()
     {
         if(closestEnemyPos.transform.position.y >= 0)
         {
-            projectilePistol = Instantiate(projectilePrefab,transform.position ,Quaternion.Euler(0,0,angle)); // Instantiating for y >= 0 position enemies
+            projectilePistol = pool.GetObject().gameObject;
+            projectilePistol.transform.position = transform.position;
+            projectilePistol.transform.rotation = Quaternion.Euler(0,0,angle);
+            //projectilePistol = Instantiate(projectilePrefab,transform.position ,Quaternion.Euler(0,0,angle)); // Instantiating for y >= 0 position enemies
         }
         else if(closestEnemyPos.transform.position.y < 0)
         {
-            projectilePistol = Instantiate(projectilePrefab,transform.position ,Quaternion.Euler(0,0,-angle));// Instantiating for y < 0 position enemies
+            projectilePistol = pool.GetObject().gameObject;
+            projectilePistol.transform.position = transform.position;
+            projectilePistol.transform.rotation = Quaternion.Euler(0,0,-angle);
+            //projectilePistol = Instantiate(projectilePrefab,transform.position ,Quaternion.Euler(0,0,-angle));// Instantiating for y < 0 position enemies
         }
     }
 

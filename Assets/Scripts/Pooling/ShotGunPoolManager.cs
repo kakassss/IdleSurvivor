@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletPoolManager : PoolManager<BaseProjectileDamage>
+public class ShotGunPoolManager : PoolManager<BaseProjectileDamage>
 {
-    public static BulletPoolManager Instance;   
+    public static ShotGunPoolManager Instance;   
 
     protected override void Awake()
     {
@@ -12,8 +12,4 @@ public class BulletPoolManager : PoolManager<BaseProjectileDamage>
 
         Instance = this;
     }
-
-
-
-    
 }

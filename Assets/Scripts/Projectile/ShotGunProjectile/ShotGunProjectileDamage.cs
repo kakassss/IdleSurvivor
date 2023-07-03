@@ -4,7 +4,7 @@ using UnityEngine;
 public class ShotGunProjectileDamage : BaseProjectileDamage
 {
     private ShotgunProjectileData data;
-
+    private ShotGunPoolManager pool;
     void Start()
     {
         data = DataManager.Instance.gameData.projectileData.shotgunData;
@@ -12,6 +12,8 @@ public class ShotGunProjectileDamage : BaseProjectileDamage
         gunDamage = data.damage;
         passThroghEnemyCounter = data.passThroghInEnemy;
         projectileSpeed = data.projectileSpeed;      
+
+        pool = ShotGunPoolManager.Instance;
     }
 
     protected override void OnTriggerEnter2D(Collider2D other)
@@ -23,7 +25,7 @@ public class ShotGunProjectileDamage : BaseProjectileDamage
 
             if (passThroghEnemyCounter == 0)
             {
-                Destroy(gameObject);
+                pool.ReturnObject(this);
             } 
 
             passThroghEnemyCounter--;
@@ -32,7 +34,7 @@ public class ShotGunProjectileDamage : BaseProjectileDamage
     }
     protected override void OnBecameInvisible()
     {
-        
+        pool.ReturnObject(this);
     }
   
 }
