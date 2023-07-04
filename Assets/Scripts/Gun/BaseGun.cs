@@ -49,14 +49,6 @@ public abstract class BaseGun : MonoBehaviour
         if(closestEnemyPos == null) return;
 
         InstantiateProjectile();
-        // if(closestEnemyPos.transform.position.y >= 0)
-        // {
-            
-        // }
-        // else if(closestEnemyPos.transform.position.y < 0)
-        // {
-        //     InstantiateProjectile();
-        // }
     }
 
     protected void PlayerInput()

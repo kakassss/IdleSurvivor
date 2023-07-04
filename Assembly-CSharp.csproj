@@ -47,6 +47,7 @@
      <Compile Include="Assets\Scripts\Projectile\BaseProjectileDamage.cs" />
      <Compile Include="Assets\Scripts\Helper\FindPlayerPosition.cs" />
      <Compile Include="Assets\Scripts\Projectile\BaseProjectileMovement.cs" />
+     <Compile Include="Assets\Scripts\Pooling\PlayerGunPoolManager.cs" />
      <Compile Include="Assets\Scripts\Projectile\PistolProjectile\PistolProjectileMovement.cs" />
      <Compile Include="Assets\Scripts\Gun\PistolGun.cs" />
      <Compile Include="Assets\Scripts\Pooling\PoolManager.cs" />
@@ -55,10 +56,12 @@
      <Compile Include="Assets\Scripts\Enemy\StrongEnemy\StrongEnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Projectile\PlayerProjectile\PlayerProjectileDamage.cs" />
      <Compile Include="Assets\Scripts\Enemy\BaseEnemyHealth.cs" />
+     <Compile Include="Assets\Scripts\Pooling\ShotGunPoolManager.cs" />
      <Compile Include="Assets\Scripts\Projectile\PistolProjectile\PistolProjectileDamage.cs" />
      <Compile Include="Assets\Scripts\Enemy\BaseEnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\NormalEnemy\NormalEnemyMovement.cs" />
      <Compile Include="Assets\Scripts\EnemyDetectArea.cs" />
+     <Compile Include="Assets\Scripts\Pooling\SniperGunPoolManager.cs" />
      <Compile Include="Assets\Scripts\GameData\GameData.cs" />
      <Compile Include="Assets\Scripts\Gun\BaseGun.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn\WaveManager.cs" />
@@ -68,9 +71,8 @@
      <Compile Include="Assets\Scripts\Projectile\SniperProjectile\SniperProjectileMovement.cs" />
      <Compile Include="Assets\Scripts\Gun\ShotGun.cs" />
      <Compile Include="Assets\Scripts\Projectile\IProjectile.cs" />
-     <Compile Include="Assets\Scripts\Pooling\ShotGunPoolManager.cs" />
-     <Compile Include="Assets\Scripts\Pooling\SniperGunPoolManager.cs" />
-     <Compile Include="Assets\Scripts\Pooling\PlayerGunPoolManager.cs" />
+     <Compile Include="Assets\Scripts\GunUpgrade\BaseGunUpgradeManager.cs" />
+     <Compile Include="Assets\Scripts\GunUpgrade\PistolGunUpgradeManager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

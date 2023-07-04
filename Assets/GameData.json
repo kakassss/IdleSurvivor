@@ -46,8 +46,8 @@
     "gunsData": {
         "pistolGunData": {
             "gunName": "",
-            "fireofRate": 1.0,
-            "radiusOfDetectArea": 10.0
+            "fireofRate": 0.19999900460243226,
+            "radiusOfDetectArea": 199.43406677246095
         },
         "sniperGunData": {
             "gunName": "",
@@ -67,7 +67,7 @@
         }
     },
     "expData": {
-        "totalExp": 4594.0,
+        "totalExp": 6544.0,
         "nextLevelRequiredExps": [
             100,
             1000,
@@ -75,8 +75,8 @@
             12000,
             20000
         ],
-        "currentLevel": 2,
-        "nextLevelRequiredExpIndex": 2
+        "currentLevel": 3,
+        "nextLevelRequiredExpIndex": 3
     },
     "spawnData": {
         "normalEnemySpawnRate": 0.0,
