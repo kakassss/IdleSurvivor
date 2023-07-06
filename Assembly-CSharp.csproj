@@ -42,6 +42,7 @@
      <Compile Include="Assets\Scripts\Pooling\PistolGunPoolManager.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn\BackGroundExpManager.cs" />
      <Compile Include="Assets\Scripts\Gun\PlayerGun.cs" />
+     <Compile Include="Assets\Scripts\GunUpgrade\PistolGunUpgradeManager.cs" />
      <Compile Include="Assets\Scripts\Projectile\ScreenCollider.cs" />
      <Compile Include="Assets\Scripts\GameData\DataManager.cs" />
      <Compile Include="Assets\Scripts\Projectile\BaseProjectileDamage.cs" />
@@ -52,6 +53,7 @@
      <Compile Include="Assets\Scripts\Gun\PistolGun.cs" />
      <Compile Include="Assets\Scripts\Pooling\PoolManager.cs" />
      <Compile Include="Assets\Scripts\Projectile\PlayerProjectile\PlayerProjectileMovement.cs" />
+     <Compile Include="Assets\Scripts\GunUpgrade\BaseGunUpgradeManager.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn\EnemySpawnManager.cs" />
      <Compile Include="Assets\Scripts\Enemy\StrongEnemy\StrongEnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Projectile\PlayerProjectile\PlayerProjectileDamage.cs" />
@@ -71,8 +73,7 @@
      <Compile Include="Assets\Scripts\Projectile\SniperProjectile\SniperProjectileMovement.cs" />
      <Compile Include="Assets\Scripts\Gun\ShotGun.cs" />
      <Compile Include="Assets\Scripts\Projectile\IProjectile.cs" />
-     <Compile Include="Assets\Scripts\GunUpgrade\BaseGunUpgradeManager.cs" />
-     <Compile Include="Assets\Scripts\GunUpgrade\PistolGunUpgradeManager.cs" />
+     <Compile Include="Assets\Scripts\GunUpgrade\ShotGunUpgradeManager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

@@ -170,6 +170,62 @@ MonoBehaviour:
   prefab: {fileID: 6308990415056262190, guid: 1f4b1fb1fbf11b74e9532c177f0da961, type: 3}
   initialPoolSize: 100
   parentTransform: {fileID: 97638304}
+--- !u!1 &100854058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 100854059}
+  - component: {fileID: 100854060}
+  m_Layer: 0
+  m_Name: 'ShotGunUpgrade '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &100854059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100854058}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1518267141}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &100854060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100854058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7440747cf9be3449fa8757b9c3e7f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGun: {fileID: 1659890232}
+  fireOfRateMultiplierValues:
+  - 0.1
+  - 0.3
+  - 0.5
+  - 3.1
+  radiusOfDetectAreaMultiplierValues:
+  - 1.2
+  - 1.4
+  - 1.8
+  - 2
+  projectileCountMultiplierValues: 01000000020000000300000004000000
 --- !u!1 &129894771
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8050229985740557600, guid: c097829970e460342834712b1a413aa5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8050229985740557606, guid: c097829970e460342834712b1a413aa5, type: 3}
       propertyPath: m_RootOrder
@@ -1287,7 +1343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f64f936d556e84b81b5d0521ea4147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pistolGunData: {fileID: 1849466111}
+  baseGun: {fileID: 1849466111}
   fireOfRateMultiplierValues:
   - 0.1
   - 0.3
@@ -2300,6 +2356,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 655932939}
+  - {fileID: 100854059}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2498,7 +2555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772378188590217429, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7393867213240598888, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
       propertyPath: shotgunPrefab
@@ -2507,6 +2564,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
+--- !u!114 &1659890232 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7393867213240598888, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
+  m_PrefabInstance: {fileID: 1659890231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 986363ad6836eed46ad9d45f501dee08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1754213646
 GameObject:
   m_ObjectHideFlags: 0
@@ -2662,7 +2730,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1976170531}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 100854060}
+        m_TargetAssemblyTypeName: ShotGunUpgradeManager, Assembly-CSharp
+        m_MethodName: UpgradeGun
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1976170531
 MonoBehaviour:
   m_ObjectHideFlags: 0

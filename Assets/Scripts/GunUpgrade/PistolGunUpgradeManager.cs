@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class PistolGunUpgradeManager : BaseGunUpgradeManager
 {
-    [SerializeField] PistolGun pistolGunData;
-
-    [SerializeField] List<float> fireOfRateMultiplierValues;
-    [SerializeField] List<float> radiusOfDetectAreaMultiplierValues;
-
     private int fireOfRateIndex = 0;
     private int radiusOfDetectAreaIndex = 0;
     protected override void Start()
@@ -27,18 +22,18 @@ public class PistolGunUpgradeManager : BaseGunUpgradeManager
         CheckMinValue();
 
         
-        SaveUpgradedData();
+        SaveUpgradedData(baseGun);
         
         fireOfRateIndex++;
         radiusOfDetectAreaIndex++;
     }
 
-    private void SaveUpgradedData()
-    {
-        currentData.gunsData = currentGunsData;
-        pistolGunData.UpgradeGunData(currentData);
-        DataManager.Instance.SavePlayerData(currentData);
-    }
+    // private void SaveUpgradedData()
+    // {
+    //     currentData.gunsData = currentGunsData;
+    //     pistolGun.UpgradeGunData(currentData);
+    //     DataManager.Instance.SavePlayerData(currentData);
+    // }
 
     private void CheckMinValue()
     {

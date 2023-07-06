@@ -105,6 +105,7 @@ public abstract class BaseGun : MonoBehaviour
     //     Gizmos.DrawWireSphere(transform.position,2);    
     // }
 
+    public abstract void UpgradeGunData(GameData data);
     protected abstract void InstantiateProjectile(); // abstract yapmamım sebebi shotgun gibi etrafa sacılan projecileların olması
     protected abstract void Update();
     protected abstract void Start();

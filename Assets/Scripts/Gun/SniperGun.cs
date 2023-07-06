@@ -36,6 +36,12 @@ public class SniperGun : BaseGun
             //projectilePistol = Instantiate(projectilePrefab,transform.position ,Quaternion.Euler(0,0,-angle));// Instantiating for y < 0 position enemies
         }
     }
+    
+    public override void UpgradeGunData(GameData data)
+    {
+        radiusOfDetectArea = data.gunsData.pistolGunData.radiusOfDetectArea;
+        fireOfRate = data.gunsData.pistolGunData.fireofRate;
+    }
 
     protected override void Update()
     {

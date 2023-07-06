@@ -46,8 +46,8 @@
     "gunsData": {
         "pistolGunData": {
             "gunName": "",
-            "fireofRate": 0.19999900460243226,
-            "radiusOfDetectArea": 199.43406677246095
+            "fireofRate": 0.10000000149011612,
+            "radiusOfDetectArea": 6775.54638671875
         },
         "sniperGunData": {
             "gunName": "",
@@ -56,9 +56,9 @@
         },
         "shotGunData": {
             "gunName": "",
-            "fireofRate": 0.5,
-            "radiusOfDetectArea": 15.0,
-            "projectileCount": 5
+            "fireofRate": 0.20000004768371583,
+            "radiusOfDetectArea": 31.616897583007814,
+            "projectileCount": 4
         },
         "playerGunData": {
             "gunName": "sa1",
@@ -67,7 +67,7 @@
         }
     },
     "expData": {
-        "totalExp": 6544.0,
+        "totalExp": 8089.0,
         "nextLevelRequiredExps": [
             100,
             1000,

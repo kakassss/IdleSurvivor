@@ -35,6 +35,12 @@ public class PlayerGun : BaseGun
         }
     }
 
+    public override void UpgradeGunData(GameData data)
+    {
+        radiusOfDetectArea = data.gunsData.pistolGunData.radiusOfDetectArea;
+        fireOfRate = data.gunsData.pistolGunData.fireofRate;
+    }
+
     protected override void Update()
     {
         PlayerInput();

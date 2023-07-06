@@ -15,7 +15,7 @@ public class PistolGun : BaseGun
         projectilePrefab = pistolprefab;
 
         pool = PistolGunPoolManager.Instance;
-
+        
     }
 
     protected override void InstantiateProjectile()
@@ -36,7 +36,7 @@ public class PistolGun : BaseGun
         }
     }
 
-    public void UpgradeGunData(GameData data)
+    public override void UpgradeGunData(GameData data)
     {
         radiusOfDetectArea = data.gunsData.pistolGunData.radiusOfDetectArea;
         fireOfRate = data.gunsData.pistolGunData.fireofRate;

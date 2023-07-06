@@ -93,6 +93,15 @@ public class ShotGun : BaseGun
         projectilAngles[projectileCount-1] = angle2; 
     }
 
+    public override void UpgradeGunData(GameData data)
+    {
+        radiusOfDetectArea = data.gunsData.shotGunData.radiusOfDetectArea;
+        fireOfRate = data.gunsData.shotGunData.fireofRate;
+        projectileCount = data.gunsData.shotGunData.projectileCount;
+
+        projectilAngles = new float[projectileCount];
+    }
+
     protected override void Update()
     {
         Fire();
