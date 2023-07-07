@@ -1,10 +1,10 @@
 
-public class PistolGunUpgradeManager : BaseGunUpgradeManager
+public class SniperGunUpgradeManager : BaseGunUpgradeManager
 {
     protected override void Start()
     {
         base.Start();
-        UpgradeButton(currentGunsData.pistolGunData);
+        UpgradeButton(currentGunsData.sniperGunData);
     }
 
     protected override void UpgradeGun(BaseGunData gunData)
@@ -18,9 +18,9 @@ public class PistolGunUpgradeManager : BaseGunUpgradeManager
 
     private void CheckMinValue()
     {
-        if(currentGunsData.pistolGunData.fireofRate <= 0.1f)
+        if(currentGunsData.sniperGunData.fireofRate <= 0.1f)
         {
-            currentGunsData.pistolGunData.fireofRate = 0.1f;
+            currentGunsData.sniperGunData.fireofRate = 0.1f;
         }
     }
 }

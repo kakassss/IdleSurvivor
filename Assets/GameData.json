@@ -21,7 +21,7 @@
         "playerData": {
             "projectileName": "",
             "damage": 11.0,
-            "projectileSpeed": 4.0,
+            "projectileSpeed": 10.0,
             "passThroghInEnemy": 0
         }
     },
@@ -47,27 +47,27 @@
         "pistolGunData": {
             "gunName": "",
             "fireofRate": 0.10000000149011612,
-            "radiusOfDetectArea": 6775.54638671875
+            "radiusOfDetectArea": 155.4565887451172
         },
         "sniperGunData": {
             "gunName": "",
-            "fireofRate": 0.699999988079071,
-            "radiusOfDetectArea": 10.0
+            "fireofRate": 0.8000002503395081,
+            "radiusOfDetectArea": 7200.0
         },
         "shotGunData": {
             "gunName": "",
-            "fireofRate": 0.20000004768371583,
-            "radiusOfDetectArea": 31.616897583007814,
+            "fireofRate": 0.39999985694885256,
+            "radiusOfDetectArea": 92.23200225830078,
             "projectileCount": 4
         },
         "playerGunData": {
             "gunName": "sa1",
-            "fireofRate": 0.30000001192092898,
-            "radiusOfDetectArea": 15.0
+            "fireofRate": 0.10000000149011612,
+            "radiusOfDetectArea": 600.0
         }
     },
     "expData": {
-        "totalExp": 8089.0,
+        "totalExp": 16414.0,
         "nextLevelRequiredExps": [
             100,
             1000,
@@ -75,8 +75,8 @@
             12000,
             20000
         ],
-        "currentLevel": 3,
-        "nextLevelRequiredExpIndex": 3
+        "currentLevel": 4,
+        "nextLevelRequiredExpIndex": 4
     },
     "spawnData": {
         "normalEnemySpawnRate": 0.0,

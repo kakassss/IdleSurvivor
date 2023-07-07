@@ -1,45 +1,38 @@
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class ShotGunUpgradeManager : BaseGunUpgradeManager
 {
     [SerializeField] List<int> projectileCountMultiplierValues;
     private int projectileCountMultiplier;
-
-    private int fireOfRateIndex = 0;
-    private int radiusOfDetectAreaIndex = 0;
     private int projectileCountIndex = 0;
+
 
     protected override void Start()
     {
         base.Start();
+        UpgradeButton(currentGunsData.shotGunData);
     }
 
-    public void UpgradeGun()
+    protected override void UpgradeGun(BaseGunData gunData)
     {
-        fireOfRateMultiplier = fireOfRateMultiplierValues[fireOfRateIndex];
-        radiusOfDetectAreaMultiplier = radiusOfDetectAreaMultiplierValues[radiusOfDetectAreaIndex];
+        base.UpgradeGun(gunData);
+
         projectileCountMultiplier = projectileCountMultiplierValues[projectileCountIndex];
-
-
-        currentGunsData.shotGunData.radiusOfDetectArea *= radiusOfDetectAreaMultiplier;
-        currentGunsData.shotGunData.fireofRate -= fireOfRateMultiplier;
         currentGunsData.shotGunData.projectileCount = projectileCountMultiplier;
 
+
         CheckMinValue();
-
-        SaveUpgradedData(baseGun);
-
-
-        fireOfRateIndex++;
-        radiusOfDetectAreaIndex++;
         projectileCountIndex++;
+        
+        SaveUpgradedData(baseGun);
     }
-
+    
     private void CheckMinValue()
     {
-        if(currentGunsData.shotGunData.fireofRate <= 0.1f)
+        if(currentGunsData.shotGunData.fireofRate <= 0.15f)
         {
             currentGunsData.shotGunData.fireofRate = 0.1f;
         }

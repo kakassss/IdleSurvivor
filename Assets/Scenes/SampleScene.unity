@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseGun: {fileID: 1659890232}
+  upgradeButton: {fileID: 1976170530}
   fireOfRateMultiplierValues:
   - 0.1
   - 0.3
@@ -309,19 +310,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 129894774}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 655932940}
-        m_TargetAssemblyTypeName: PistolGunUpgradeManager, Assembly-CSharp
-        m_MethodName: UpgradeGun
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &129894774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -791,6 +780,62 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 512
+--- !u!1 &464507553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 464507554}
+  - component: {fileID: 464507555}
+  m_Layer: 0
+  m_Name: PlayerGunUpgrade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &464507554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464507553}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1518267141}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &464507555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464507553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf1e19a2b700d64d96a39300b54dd47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGun: {fileID: 1468296144}
+  upgradeButton: {fileID: 810714244}
+  fireOfRateMultiplierValues:
+  - 0.4
+  - 0.7
+  - 1
+  - 1.2
+  radiusOfDetectAreaMultiplierValues:
+  - 2
+  - 3
+  - 4
+  - 5
 --- !u!1 &506439667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,6 +1389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseGun: {fileID: 1849466111}
+  upgradeButton: {fileID: 129894773}
   fireOfRateMultiplierValues:
   - 0.1
   - 0.3
@@ -1402,6 +1448,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &727347808 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1735335260736319433, guid: c9f840cd5d131ef428882f457f939ebe, type: 3}
+  m_PrefabInstance: {fileID: 1080325477}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 581467f865eda0648a70b6ce707550b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &810714242
 GameObject:
   m_ObjectHideFlags: 0
@@ -2062,6 +2119,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298827545}
   m_CullTransparentMesh: 1
+--- !u!1 &1325049651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1325049652}
+  - component: {fileID: 1325049653}
+  m_Layer: 0
+  m_Name: SniperGunUpgrade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1325049652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325049651}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1518267141}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1325049653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325049651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 015e431899d05f243b026676e1de312a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGun: {fileID: 727347808}
+  upgradeButton: {fileID: 1298827547}
+  fireOfRateMultiplierValues:
+  - 0.1
+  - 0.3
+  - 0.6
+  - 1
+  radiusOfDetectAreaMultiplierValues:
+  - 2
+  - 3
+  - 4
+  - 5
 --- !u!1 &1369112581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2327,6 +2440,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f242a5d1f221f934d98ed046f8c13ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1468296144 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8293760990317597074, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
+  m_PrefabInstance: {fileID: 2111547830}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d258d68dcab5a16478f2846e46e8adee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1518267140
 GameObject:
   m_ObjectHideFlags: 0
@@ -2357,6 +2481,8 @@ Transform:
   m_Children:
   - {fileID: 655932939}
   - {fileID: 100854059}
+  - {fileID: 1325049652}
+  - {fileID: 464507554}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2555,7 +2681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772378188590217429, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7393867213240598888, guid: a2c8f623e17a07e4c803fb3327d7ec93, type: 3}
       propertyPath: shotgunPrefab
@@ -2730,19 +2856,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1976170531}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 100854060}
-        m_TargetAssemblyTypeName: ShotGunUpgradeManager, Assembly-CSharp
-        m_MethodName: UpgradeGun
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1976170531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3179,7 +3293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7768914535927882618, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7768914535927882620, guid: 47558e8e2349ad54fb5dc051d3ccfa29, type: 3}
       propertyPath: m_RootOrder
