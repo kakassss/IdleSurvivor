@@ -10,17 +10,10 @@ public class SniperGunUpgradeManager : BaseGunUpgradeManager
     protected override void UpgradeGun(BaseGunData gunData)
     {
         base.UpgradeGun(gunData);
-        CheckMinValue();
 
+        CheckMinValue_FireOfRate(gunData,0.2f);
+        CheckMinValue_RadiousOfDetectArea(gunData,20f);
 
         SaveUpgradedData(baseGun);
-    }
-
-    private void CheckMinValue()
-    {
-        if(currentGunsData.sniperGunData.fireofRate <= 0.1f)
-        {
-            currentGunsData.sniperGunData.fireofRate = 0.1f;
-        }
     }
 }

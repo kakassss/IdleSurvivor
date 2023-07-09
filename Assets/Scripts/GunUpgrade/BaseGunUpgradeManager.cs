@@ -49,4 +49,20 @@ public abstract class BaseGunUpgradeManager : MonoBehaviour
         gun.UpgradeGunData(currentData);
         DataManager.Instance.SavePlayerData(currentData);
     }
+
+    protected void CheckMinValue_FireOfRate(BaseGunData gunsData,float value)
+    {
+        if(gunsData.fireofRate <= value)
+        {
+            gunsData.fireofRate = value;
+        }
+    }
+
+    protected void CheckMinValue_RadiousOfDetectArea(BaseGunData gunsData,float value)
+    {
+        if(gunsData.radiusOfDetectArea <= value)
+        {
+            gunsData.radiusOfDetectArea = value;
+        }
+    }
 }

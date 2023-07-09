@@ -23,18 +23,11 @@ public class ShotGunUpgradeManager : BaseGunUpgradeManager
         projectileCountMultiplier = projectileCountMultiplierValues[projectileCountIndex];
         currentGunsData.shotGunData.projectileCount = projectileCountMultiplier;
 
-
-        CheckMinValue();
+        CheckMinValue_FireOfRate(gunData,0.2f);
+        CheckMinValue_RadiousOfDetectArea(gunData,20f);
         projectileCountIndex++;
         
         SaveUpgradedData(baseGun);
     }
     
-    private void CheckMinValue()
-    {
-        if(currentGunsData.shotGunData.fireofRate <= 0.15f)
-        {
-            currentGunsData.shotGunData.fireofRate = 0.1f;
-        }
-    }
 }
